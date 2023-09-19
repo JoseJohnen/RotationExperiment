@@ -1,0 +1,12 @@
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\bin\Debug\net6.0-windows\RotationExperiment.deps.json
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\bin\Debug\net6.0-windows\RotationExperiment.dll
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\bin\Debug\net6.0-windows\RotationExperiment.pdb
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.csproj.AssemblyReference.cache
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.GeneratedMSBuildEditorConfig.editorconfig
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.AssemblyInfoInputs.cache
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.AssemblyInfo.cs
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.csproj.CoreCompileInputs.cache
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.dll
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\refint\RotationExperiment.dll
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\RotationExperiment.pdb
+E:\User\Documentos\Stride Projects\RotationExperiment\RotationExperiment\obj\Debug\net6.0-windows\ref\RotationExperiment.dll
