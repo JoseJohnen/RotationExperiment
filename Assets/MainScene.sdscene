@@ -39,8 +39,8 @@ Hierarchy:
                 Components:
                     1be3d7e1ea557d64f4974268024fe948: !TransformComponent
                         Id: 368e9b87-16d7-45ad-88a3-c773b6e8087d
-                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
-                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Position: {X: 0.0, Y: 9.0, Z: 0.0}
+                        Rotation: {X: -0.70710677, Y: 0.0, Z: 0.0, W: 0.70710677}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     ddec5fef7b3853835776f11ee535c96c: !CameraComponent
@@ -105,7 +105,8 @@ Hierarchy:
                         Position: {X: 0.0, Y: 0.5, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
+                        Children:
+                            42c99ddbe2eeaf1b0ea2caa2880bbcf7: ref!! b2e78df3-aaa2-46cc-bb12-476696afe651
                     6805299db4a72b3e788ec82f4662dbe4: !ModelComponent
                         Id: 74f83353-03bf-4898-bda4-568c93a14a42
                         Model: 4dff6263-89c4-47eb-9a67-8ac9c3877e67:Sphere
@@ -141,6 +142,21 @@ Hierarchy:
                         Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
                         LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
                         RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
+        -   Entity:
+                Id: b0fbe969-927a-434e-8c21-ca51219d1177
+                Name: point
+                Components:
+                    6151901d2aac6aca0f8b81885945b5f7: !TransformComponent
+                        Id: b2e78df3-aaa2-46cc-bb12-476696afe651
+                        Position: {X: 0.0, Y: 0.0, Z: -1.0}
+                        Rotation: {X: -0.70710677, Y: 0.0, Z: 0.0, W: 0.70710677}
+                        Scale: {X: 0.5, Y: 0.5, Z: 0.5}
+                        Children: {}
+                    7c69e3b2ccc2b0583aa3e74ef23336ca: !ModelComponent
+                        Id: 5797273f-bfa4-4358-9830-faf769b13852
+                        Model: 6202289c-39d2-4444-819c-7f245bf26d80:Cone
+                        Materials:
+                            c6cf64454198068d9702b49708bfed26~0: b1b7e04d-09e2-458d-a04d-3ba46ef99f36:Material
         -   Entity:
                 Id: c2afff0a-da96-4ceb-ae44-41d465c756cb
                 Name: RightShoulder

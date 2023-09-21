@@ -45,11 +45,18 @@ namespace RotationExperiment
             }
         }
 
-        public static Vector2 operator *(Matrix2x2 f, Vector2 g)
+        public static System.Numerics.Vector2 operator *(Matrix2x2 f, System.Numerics.Vector2 g)
         {
             float x = (f.M11 * g.X) + (f.M12 * g.Y);
             float y = (f.M21 * g.X) + (f.M22 * g.Y);
-            return new Vector2(x, y);
+            return new System.Numerics.Vector2(x, y);
+        }
+
+        public static Stride.Core.Mathematics.Vector2 operator *(Matrix2x2 f, Stride.Core.Mathematics.Vector2 g)
+        {
+            float x = (f.M11 * g.X) + (f.M12 * g.Y);
+            float y = (f.M21 * g.X) + (f.M22 * g.Y);
+            return new Stride.Core.Mathematics.Vector2(x, y);
         }
     }
 }
