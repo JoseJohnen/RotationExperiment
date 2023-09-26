@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v6.0": {
       "RotationExperiment/1.0.0": {
         "dependencies": {
-          "Stride.Core.Assets.CompilerApp": "4.1.0.1838",
-          "Stride.Engine": "4.1.0.1838",
-          "Stride.Navigation": "4.1.0.1838",
-          "Stride.Particles": "4.1.0.1838",
-          "Stride.Physics": "4.1.0.1838",
-          "Stride.UI": "4.1.0.1838",
-          "Stride.Video": "4.1.0.1838"
+          "Stride.Core.Assets.CompilerApp": "4.1.0.1898",
+          "Stride.Engine": "4.1.0.1898",
+          "Stride.Navigation": "4.1.0.1898",
+          "Stride.Particles": "4.1.0.1898",
+          "Stride.Physics": "4.1.0.1898",
+          "Stride.UI": "4.1.0.1898",
+          "Stride.Video": "4.1.0.1898"
         },
         "runtime": {
           "RotationExperiment.dll": {}
@@ -63,7 +63,7 @@
           "System.Reflection.Metadata": "5.0.0",
           "System.Security.Principal.Windows": "4.7.0",
           "System.Text.Encoding.CodePages": "4.6.0",
-          "System.Text.Json": "6.0.0",
+          "System.Text.Json": "7.0.0",
           "System.Threading.Tasks.Dataflow": "4.10.0"
         }
       },
@@ -89,7 +89,7 @@
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
           "System.Collections.Immutable": "6.0.0",
-          "System.Memory": "4.5.4",
+          "System.Memory": "4.5.5",
           "System.Reflection.Metadata": "5.0.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
           "System.Text.Encoding.CodePages": "4.6.0",
@@ -132,24 +132,21 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyModel/6.0.0": {
+      "Microsoft.Extensions.DependencyModel/7.0.0": {
         "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Memory": "4.5.4",
-          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encodings.Web": "6.0.0",
-          "System.Text.Json": "6.0.0"
+          "System.Text.Encodings.Web": "7.0.0",
+          "System.Text.Json": "7.0.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.21.52210"
+          "lib/net6.0/Microsoft.Extensions.DependencyModel.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
       "Microsoft.NET.StringTools/1.0.0": {
         "dependencies": {
-          "System.Memory": "4.5.4",
+          "System.Memory": "4.5.5",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
@@ -461,34 +458,41 @@
           }
         }
       },
-      "Silk.NET.Core/2.15.0": {
+      "Silk.NET.Assimp/2.17.1": {
+        "dependencies": {
+          "Silk.NET.Core": "2.17.1",
+          "Silk.NET.Maths": "2.17.1",
+          "Ultz.Native.Assimp": "5.2.5.1"
+        }
+      },
+      "Silk.NET.Core/2.17.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "Microsoft.DotNet.PlatformAbstractions": "3.1.6",
-          "Microsoft.Extensions.DependencyModel": "6.0.0",
-          "System.Memory": "4.5.4",
+          "Microsoft.Extensions.DependencyModel": "7.0.0",
+          "System.Memory": "4.5.5",
           "System.Numerics.Vectors": "4.5.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Silk.NET.Core.dll": {
-            "assemblyVersion": "2.15.0.0",
-            "fileVersion": "2.15.0.0"
+            "assemblyVersion": "2.17.1.0",
+            "fileVersion": "2.17.1.0"
           }
         }
       },
-      "Silk.NET.Maths/2.15.0": {
+      "Silk.NET.Maths/2.17.1": {
         "runtime": {
           "lib/net5.0/Silk.NET.Maths.dll": {
-            "assemblyVersion": "2.15.0.0",
-            "fileVersion": "2.15.0.0"
+            "assemblyVersion": "2.17.1.0",
+            "fileVersion": "2.17.1.0"
           }
         }
       },
       "Silk.NET.OpenGL/2.15.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.15.0",
-          "Silk.NET.Maths": "2.15.0"
+          "Silk.NET.Core": "2.17.1",
+          "Silk.NET.Maths": "2.17.1"
         },
         "runtime": {
           "lib/net5.0/Silk.NET.OpenGL.dll": {
@@ -499,8 +503,8 @@
       },
       "Silk.NET.OpenGLES/2.15.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.15.0",
-          "Silk.NET.Maths": "2.15.0"
+          "Silk.NET.Core": "2.17.1",
+          "Silk.NET.Maths": "2.17.1"
         },
         "runtime": {
           "lib/net5.0/Silk.NET.OpenGLES.dll": {
@@ -511,7 +515,7 @@
       },
       "Silk.NET.OpenGLES.Extensions.EXT/2.15.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.15.0",
+          "Silk.NET.Core": "2.17.1",
           "Silk.NET.OpenGLES": "2.15.0"
         },
         "runtime": {
@@ -523,8 +527,8 @@
       },
       "Silk.NET.OpenXR/2.15.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.15.0",
-          "Silk.NET.Maths": "2.15.0"
+          "Silk.NET.Core": "2.17.1",
+          "Silk.NET.Maths": "2.17.1"
         },
         "runtime": {
           "lib/net5.0/Silk.NET.OpenXR.dll": {
@@ -535,8 +539,8 @@
       },
       "Silk.NET.SDL/2.15.0": {
         "dependencies": {
-          "Silk.NET.Core": "2.15.0",
-          "Silk.NET.Maths": "2.15.0",
+          "Silk.NET.Core": "2.17.1",
+          "Silk.NET.Maths": "2.17.1",
           "Ultz.Native.SDL": "2.0.14.1"
         },
         "runtime": {
@@ -552,20 +556,20 @@
         }
       },
       "SshNet.Security.Cryptography/1.3.0": {},
-      "Stride/4.1.0.1838": {
+      "Stride/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Mathematics": "4.1.0.1838",
-          "Stride.Core.Serialization": "4.1.0.1838",
+          "Stride.Core.Mathematics": "4.1.0.1898",
+          "Stride.Core.Serialization": "4.1.0.1898",
           "System.Drawing.Common": "4.7.2"
         },
         "runtime": {
           "lib/net6.0/Stride.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Assets/4.1.0.1838": {
+      "Stride.Assets/4.1.0.1898": {
         "dependencies": {
           "Microsoft.Build": "17.0.0",
           "Microsoft.Build.Utilities.Core": "17.0.0",
@@ -573,15 +577,15 @@
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "3.6.0",
           "SSH.NET": "2020.0.2",
           "SharpDX.Direct2D1": "4.2.0",
-          "Stride": "4.1.0.1838",
-          "Stride.Core.Assets": "4.1.0.1838",
-          "Stride.Core.ProjectTemplating": "4.1.0.1838",
-          "Stride.Engine": "4.1.0.1838",
-          "Stride.Navigation": "4.1.0.1838",
-          "Stride.Physics": "4.1.0.1838",
-          "Stride.TextureConverter": "4.1.0.1838",
-          "Stride.UI": "4.1.0.1838",
-          "Stride.Video": "4.1.0.1838",
+          "Stride": "4.1.0.1898",
+          "Stride.Core.Assets": "4.1.0.1898",
+          "Stride.Core.ProjectTemplating": "4.1.0.1898",
+          "Stride.Engine": "4.1.0.1898",
+          "Stride.Navigation": "4.1.0.1898",
+          "Stride.Physics": "4.1.0.1898",
+          "Stride.TextureConverter": "4.1.0.1898",
+          "Stride.UI": "4.1.0.1898",
+          "Stride.Video": "4.1.0.1898",
           "System.AppContext": "4.3.0",
           "System.Collections.Immutable": "6.0.0",
           "System.Console": "4.3.1",
@@ -609,20 +613,22 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "Stride.Assets.Models/4.1.0.1838": {
+      "Stride.Assets.Models/4.1.0.1898": {
         "dependencies": {
-          "Stride.Assets": "4.1.0.1838"
+          "Stride.Assets": "4.1.0.1898",
+          "Stride.Importer.Assimp": "4.1.0.1898",
+          "Stride.Importer.Common": "4.1.0.1898"
         }
       },
-      "Stride.Audio/4.1.0.1838": {
+      "Stride.Audio/4.1.0.1898": {
         "dependencies": {
-          "Stride": "4.1.0.1838",
-          "Stride.Native": "4.1.0.1838"
+          "Stride": "4.1.0.1898",
+          "Stride.Native": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Audio.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -683,7 +689,7 @@
           }
         }
       },
-      "Stride.Core/4.1.0.1838": {
+      "Stride.Core/4.1.0.1898": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.4",
           "ServiceWire": "5.3.4",
@@ -694,103 +700,51 @@
             "assemblyVersion": "4.1.0.1",
             "fileVersion": "4.1.0.1"
           }
-        },
-        "runtimeTargets": {
-          "runtimes/android-arm/native/libcore.so": {
-            "rid": "android-arm",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/android-arm64/native/libcore.so": {
-            "rid": "android-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/android-x64/native/libcore.so": {
-            "rid": "android-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/android-x86/native/libcore.so": {
-            "rid": "android-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/ios/native/libNativePath.a": {
-            "rid": "ios",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/ios/native/libcore.a": {
-            "rid": "ios",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/libcore.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/osx-x64/native/libcore.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/libcore.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/libcore.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
         }
       },
-      "Stride.Core.Assets/4.1.0.1838": {
+      "Stride.Core.Assets/4.1.0.1898": {
         "dependencies": {
           "Microsoft.Build": "17.0.0",
           "Microsoft.Build.Locator": "1.4.1",
           "Microsoft.Build.Utilities.Core": "17.0.0",
-          "Stride.Core.BuildEngine.Common": "4.1.0.1838",
-          "Stride.Core.Packages": "4.1.0.1838",
+          "Stride.Core.BuildEngine.Common": "4.1.0.1898",
+          "Stride.Core.Packages": "4.1.0.1898",
           "System.Reflection.Emit": "4.7.0",
           "System.Threading.Tasks.Dataflow": "4.10.0"
         }
       },
-      "Stride.Core.Assets.CompilerApp/4.1.0.1838": {
+      "Stride.Core.Assets.CompilerApp/4.1.0.1898": {
         "dependencies": {
           "Mono.Options": "5.3.0.1",
-          "Stride.Assets.Models": "4.1.0.1838",
-          "Stride.Particles": "4.1.0.1838",
-          "Stride.Physics": "4.1.0.1838",
-          "Stride.SpriteStudio.Offline": "4.1.0.1838",
-          "Stride.UI": "4.1.0.1838"
+          "Stride.Assets.Models": "4.1.0.1898",
+          "Stride.Particles": "4.1.0.1898",
+          "Stride.Physics": "4.1.0.1898",
+          "Stride.SpriteStudio.Offline": "4.1.0.1898",
+          "Stride.UI": "4.1.0.1898"
         }
       },
-      "Stride.Core.BuildEngine.Common/4.1.0.1838": {
+      "Stride.Core.BuildEngine.Common/4.1.0.1898": {
         "dependencies": {
           "ServiceWire": "5.3.4",
-          "Stride.Core.Design": "4.1.0.1838"
+          "Stride.Core.Design": "4.1.0.1898"
         }
       },
-      "Stride.Core.Design/4.1.0.1838": {
+      "Stride.Core.Design/4.1.0.1898": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.Extensions.DependencyModel": "6.0.0",
+          "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Microsoft.VisualStudio.Setup.Configuration.Interop": "2.3.2262-g94fae01e",
           "NuGet.Configuration": "6.4.0",
           "SharpDX": "4.2.0",
-          "Stride.Core.Mathematics": "4.1.0.1838",
-          "Stride.Core.Serialization": "4.1.0.1838",
-          "Stride.Core.Yaml": "4.1.0.1838",
+          "Stride.Core.Mathematics": "4.1.0.1898",
+          "Stride.Core.Serialization": "4.1.0.1898",
+          "Stride.Core.Yaml": "4.1.0.1898",
           "System.Management": "4.7.0"
         }
       },
-      "Stride.Core.IO/4.1.0.1838": {
+      "Stride.Core.IO/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core": "4.1.0.1838"
+          "Stride.Core": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Core.IO.dll": {
@@ -799,9 +753,9 @@
           }
         }
       },
-      "Stride.Core.Mathematics/4.1.0.1838": {
+      "Stride.Core.Mathematics/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core": "4.1.0.1838"
+          "Stride.Core": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Core.Mathematics.dll": {
@@ -810,9 +764,9 @@
           }
         }
       },
-      "Stride.Core.MicroThreading/4.1.0.1838": {
+      "Stride.Core.MicroThreading/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core": "4.1.0.1838"
+          "Stride.Core": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Core.MicroThreading.dll": {
@@ -821,32 +775,32 @@
           }
         }
       },
-      "Stride.Core.Packages/4.1.0.1838": {
+      "Stride.Core.Packages/4.1.0.1898": {
         "dependencies": {
           "NuGet.Commands": "6.4.0",
           "NuGet.PackageManagement": "6.4.0",
           "NuGet.Protocol": "6.4.0",
           "NuGet.Resolver": "6.4.0",
-          "Stride.Core.Design": "4.1.0.1838",
+          "Stride.Core.Design": "4.1.0.1898",
           "System.IO.Compression": "4.3.0"
         }
       },
-      "Stride.Core.ProjectTemplating/4.1.0.1838": {
+      "Stride.Core.ProjectTemplating/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Design": "4.1.0.1838",
+          "Stride.Core.Design": "4.1.0.1898",
           "Stride.Mono.TextTemplating": "2.1.0-preview-0009-g0d0b6db3ca"
         }
       },
-      "Stride.Core.Reflection/4.1.0.1838": {
+      "Stride.Core.Reflection/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Serialization": "4.1.0.1838"
+          "Stride.Core.Serialization": "4.1.0.1898"
         }
       },
-      "Stride.Core.Serialization/4.1.0.1838": {
+      "Stride.Core.Serialization/4.1.0.1898": {
         "dependencies": {
           "K4os.Compression.LZ4.Legacy": "1.2.16",
-          "Stride.Core.IO": "4.1.0.1838",
-          "Stride.Core.MicroThreading": "4.1.0.1838"
+          "Stride.Core.IO": "4.1.0.1898",
+          "Stride.Core.MicroThreading": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Core.Serialization.dll": {
@@ -855,10 +809,10 @@
           }
         }
       },
-      "Stride.Core.Shaders/4.1.0.1838": {
+      "Stride.Core.Shaders/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core": "4.1.0.1838",
-          "Stride.Irony": "4.1.0.1838"
+          "Stride.Core": "4.1.0.1898",
+          "Stride.Irony": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/CppNet.dll": {
@@ -871,39 +825,39 @@
           }
         }
       },
-      "Stride.Core.Yaml/4.1.0.1838": {
+      "Stride.Core.Yaml/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Reflection": "4.1.0.1838"
+          "Stride.Core.Reflection": "4.1.0.1898"
         }
       },
-      "Stride.Engine/4.1.0.1838": {
+      "Stride.Engine/4.1.0.1898": {
         "dependencies": {
-          "Stride.Audio": "4.1.0.1838",
-          "Stride.Rendering": "4.1.0.1838",
-          "Stride.Shaders.Compiler": "4.1.0.1838",
-          "Stride.VirtualReality": "4.1.0.1838",
+          "Stride.Audio": "4.1.0.1898",
+          "Stride.Rendering": "4.1.0.1898",
+          "Stride.Shaders.Compiler": "4.1.0.1898",
+          "Stride.VirtualReality": "4.1.0.1898",
           "System.Threading.Tasks.Dataflow": "4.10.0",
           "System.ValueTuple": "4.5.0"
         },
         "runtime": {
           "lib/net6.0/Stride.Engine.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Games/4.1.0.1838": {
+      "Stride.Games/4.1.0.1898": {
         "dependencies": {
-          "Stride.Graphics": "4.1.0.1838"
+          "Stride.Graphics": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0-windows7.0/Direct3D11/Stride.Games.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Graphics/4.1.0.1838": {
+      "Stride.Graphics/4.1.0.1898": {
         "dependencies": {
           "SharpDX.D3DCompiler": "4.2.0",
           "SharpDX.Direct3D11": "4.2.0",
@@ -912,17 +866,17 @@
           "Silk.NET.OpenGLES": "2.15.0",
           "Silk.NET.OpenGLES.Extensions.EXT": "2.15.0",
           "Silk.NET.SDL": "2.15.0",
-          "Stride": "4.1.0.1838",
-          "Stride.Native": "4.1.0.1838",
-          "Stride.Shaders": "4.1.0.1838",
+          "Stride": "4.1.0.1898",
+          "Stride.Native": "4.1.0.1898",
+          "Stride.Shaders": "4.1.0.1898",
           "Stride.SharpFont": "1.0.0",
-          "System.Memory": "4.5.4",
+          "System.Memory": "4.5.5",
           "Vortice.Vulkan": "1.2.167"
         },
         "runtime": {
           "lib/net6.0/Direct3D11/Stride.Graphics.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -968,20 +922,32 @@
           }
         }
       },
-      "Stride.Input/4.1.0.1838": {
+      "Stride.Importer.Assimp/4.1.0.1898": {
+        "dependencies": {
+          "Silk.NET.Assimp": "2.17.1",
+          "Stride.Importer.Common": "4.1.0.1898"
+        }
+      },
+      "Stride.Importer.Common/4.1.0.1898": {
+        "dependencies": {
+          "Stride.Assets": "4.1.0.1898",
+          "Stride.Engine": "4.1.0.1898"
+        }
+      },
+      "Stride.Input/4.1.0.1898": {
         "dependencies": {
           "SharpDX.DirectInput": "4.2.0",
           "SharpDX.XInput": "4.2.0",
-          "Stride.Games": "4.1.0.1838"
+          "Stride.Games": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0-windows7.0/Direct3D11/Stride.Input.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Irony/4.1.0.1838": {
+      "Stride.Irony/4.1.0.1898": {
         "runtime": {
           "lib/net6.0/Stride.Irony.dll": {
             "assemblyVersion": "0.0.0.0",
@@ -994,14 +960,14 @@
           "System.CodeDom": "4.7.0"
         }
       },
-      "Stride.Native/4.1.0.1838": {
+      "Stride.Native/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Mathematics": "4.1.0.1838"
+          "Stride.Core.Mathematics": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Native.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1072,14 +1038,14 @@
           }
         }
       },
-      "Stride.Navigation/4.1.0.1838": {
+      "Stride.Navigation/4.1.0.1898": {
         "dependencies": {
-          "Stride.Physics": "4.1.0.1838"
+          "Stride.Physics": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Navigation.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1145,20 +1111,20 @@
           }
         }
       },
-      "Stride.Particles/4.1.0.1838": {
+      "Stride.Particles/4.1.0.1898": {
         "dependencies": {
-          "Stride.Engine": "4.1.0.1838"
+          "Stride.Engine": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Particles.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Physics/4.1.0.1838": {
+      "Stride.Physics/4.1.0.1898": {
         "dependencies": {
-          "Stride.Engine": "4.1.0.1838"
+          "Stride.Engine": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/BulletSharp.NetStandard.dll": {
@@ -1166,8 +1132,8 @@
             "fileVersion": "1.0.0.0"
           },
           "lib/net6.0/Stride.Physics.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1213,38 +1179,38 @@
           }
         }
       },
-      "Stride.Rendering/4.1.0.1838": {
+      "Stride.Rendering/4.1.0.1898": {
         "dependencies": {
-          "Stride.Games": "4.1.0.1838",
-          "Stride.Native": "4.1.0.1838"
+          "Stride.Games": "4.1.0.1898",
+          "Stride.Native": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Rendering.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Shaders/4.1.0.1838": {
+      "Stride.Shaders/4.1.0.1898": {
         "dependencies": {
-          "Stride": "4.1.0.1838"
+          "Stride": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Shaders.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Shaders.Compiler/4.1.0.1838": {
+      "Stride.Shaders.Compiler/4.1.0.1898": {
         "dependencies": {
           "SharpDX.D3DCompiler": "4.2.0",
-          "Stride.Shaders.Parser": "4.1.0.1838"
+          "Stride.Shaders.Parser": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Shaders.Compiler.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1260,15 +1226,15 @@
           }
         }
       },
-      "Stride.Shaders.Parser/4.1.0.1838": {
+      "Stride.Shaders.Parser/4.1.0.1898": {
         "dependencies": {
-          "Stride.Core.Shaders": "4.1.0.1838",
-          "Stride.Shaders": "4.1.0.1838"
+          "Stride.Core.Shaders": "4.1.0.1898",
+          "Stride.Shaders": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.Shaders.Parser.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
@@ -1283,45 +1249,45 @@
           }
         }
       },
-      "Stride.SpriteStudio.Offline/4.1.0.1838": {
+      "Stride.SpriteStudio.Offline/4.1.0.1898": {
         "dependencies": {
-          "Stride.Assets": "4.1.0.1838",
-          "Stride.SpriteStudio.Runtime": "4.1.0.1838"
+          "Stride.Assets": "4.1.0.1898",
+          "Stride.SpriteStudio.Runtime": "4.1.0.1898"
         }
       },
-      "Stride.SpriteStudio.Runtime/4.1.0.1838": {
+      "Stride.SpriteStudio.Runtime/4.1.0.1898": {
         "dependencies": {
-          "Stride.Engine": "4.1.0.1838"
+          "Stride.Engine": "4.1.0.1898"
         }
       },
-      "Stride.TextureConverter/4.1.0.1838": {
+      "Stride.TextureConverter/4.1.0.1898": {
         "dependencies": {
-          "Stride.Graphics": "4.1.0.1838"
+          "Stride.Graphics": "4.1.0.1898"
         }
       },
-      "Stride.UI/4.1.0.1838": {
+      "Stride.UI/4.1.0.1898": {
         "dependencies": {
-          "Stride.Engine": "4.1.0.1838"
+          "Stride.Engine": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Stride.UI.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         }
       },
-      "Stride.Video/4.1.0.1838": {
+      "Stride.Video/4.1.0.1898": {
         "dependencies": {
           "FFmpeg.AutoGen": "3.4.0.2",
           "SharpDX.Direct3D11": "4.2.0",
           "SharpDX.Direct3D12": "4.2.0",
           "SharpDX.MediaFoundation": "4.2.0",
-          "Stride.Engine": "4.1.0.1838"
+          "Stride.Engine": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Direct3D11/Stride.Video.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1397,17 +1363,17 @@
           }
         }
       },
-      "Stride.VirtualReality/4.1.0.1838": {
+      "Stride.VirtualReality/4.1.0.1898": {
         "dependencies": {
           "Silk.NET.OpenXR": "2.15.0",
-          "Stride.Games": "4.1.0.1838",
-          "Stride.Graphics": "4.1.0.1838",
-          "Stride.Input": "4.1.0.1838"
+          "Stride.Games": "4.1.0.1898",
+          "Stride.Graphics": "4.1.0.1898",
+          "Stride.Input": "4.1.0.1898"
         },
         "runtime": {
           "lib/net6.0/Direct3D11/Stride.VirtualReality.dll": {
-            "assemblyVersion": "4.1.0.1838",
-            "fileVersion": "4.1.0.1838"
+            "assemblyVersion": "4.1.0.1898",
+            "fileVersion": "4.1.0.1898"
           }
         },
         "runtimeTargets": {
@@ -1483,7 +1449,15 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Buffers/4.5.1": {},
+      "System.Buffers/4.3.0": {
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.1",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.CodeDom/4.7.0": {},
       "System.Collections/4.3.0": {
         "dependencies": {
@@ -1704,7 +1678,7 @@
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.4",
-          "System.Buffers": "4.5.1",
+          "System.Buffers": "4.3.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -1722,7 +1696,7 @@
       },
       "System.IO.Compression.ZipFile/4.3.0": {
         "dependencies": {
-          "System.Buffers": "4.5.1",
+          "System.Buffers": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.Compression": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -1753,7 +1727,7 @@
       "System.IO.Pipes/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.4",
-          "System.Buffers": "4.5.1",
+          "System.Buffers": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.FileSystem.Primitives": "4.3.0",
@@ -1810,7 +1784,7 @@
           "System.CodeDom": "4.7.0"
         }
       },
-      "System.Memory/4.5.4": {},
+      "System.Memory/4.5.5": {},
       "System.Net.Http/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.4",
@@ -2133,15 +2107,35 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
-      "System.Text.Encodings.Web/6.0.0": {
+      "System.Text.Encodings.Web/7.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
-      "System.Text.Json/6.0.0": {
+      "System.Text.Json/7.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0",
-          "System.Text.Encodings.Web": "6.0.0"
+          "System.Text.Encodings.Web": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Text.Json.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
       "System.Text.RegularExpressions/4.3.0": {
@@ -2265,6 +2259,7 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "Ultz.Native.Assimp/5.2.5.1": {},
       "Ultz.Native.SDL/2.0.14.1": {
         "runtimeTargets": {
           "runtimes/linux-x64/native/libSDL2-2.0.so": {
@@ -2430,12 +2425,12 @@
       "path": "microsoft.dotnet.platformabstractions/3.1.6",
       "hashPath": "microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyModel/6.0.0": {
+    "Microsoft.Extensions.DependencyModel/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TD5QHg98m3+QhgEV1YVoNMl5KtBw/4rjfxLHO0e/YV9bPUBDKntApP4xdrVtGgCeQZHVfC2EXIGsdpRNrr87Pg==",
-      "path": "microsoft.extensions.dependencymodel/6.0.0",
-      "hashPath": "microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512"
+      "sha512": "sha512-oONNYd71J3LzkWc4fUHl3SvMfiQMYUCo/mDHDEu76hYYxdhdrPYv6fvGv9nnKVyhE9P0h20AU8RZB5OOWQcAXg==",
+      "path": "microsoft.extensions.dependencymodel/7.0.0",
+      "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
     },
     "Microsoft.NET.StringTools/1.0.0": {
       "type": "package",
@@ -2787,19 +2782,26 @@
       "path": "sharpdx.xinput/4.2.0",
       "hashPath": "sharpdx.xinput.4.2.0.nupkg.sha512"
     },
-    "Silk.NET.Core/2.15.0": {
+    "Silk.NET.Assimp/2.17.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cRJxftp7hLUVlHOdtorGaqzIOZXIN9w8kieIVidfWuWuaD5PgKHT5II/Y5dItYHWbb+Sg38XfXDG2Tr+O9te8A==",
-      "path": "silk.net.core/2.15.0",
-      "hashPath": "silk.net.core.2.15.0.nupkg.sha512"
+      "sha512": "sha512-j3QYZm33F8qfNd9Jqp3DCLOaxDghEijtPEbivCJCgB1w+3xF71WCztOEwv4N/NDjN9fitUZ207JPbk+vYnz44g==",
+      "path": "silk.net.assimp/2.17.1",
+      "hashPath": "silk.net.assimp.2.17.1.nupkg.sha512"
     },
-    "Silk.NET.Maths/2.15.0": {
+    "Silk.NET.Core/2.17.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7aDFUR+wSU8kv/YrJX9PxTNye+ZO4ReYEoGI9YjLiipDHYivGJ/I+iR2xtSP+hkeKbC+xmOgE6TnZVf5INCqNg==",
-      "path": "silk.net.maths/2.15.0",
-      "hashPath": "silk.net.maths.2.15.0.nupkg.sha512"
+      "sha512": "sha512-x/Xfv7+UlbWjNqrxocxHu32Ypgmqnw4q5xRXUj8vjrMsDTWkyEFBSaDnmcjWSSDiZ8TJDfsmCYLxjj7OdHNHbw==",
+      "path": "silk.net.core/2.17.1",
+      "hashPath": "silk.net.core.2.17.1.nupkg.sha512"
+    },
+    "Silk.NET.Maths/2.17.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i+0dW0cVTaAfal8qGPGHpK25NS479bZC7INHa0b7c9AxUWeBBUDnhVIU1LgVuRMqDI9mi0Uu2wP95Ae9fk7vMQ==",
+      "path": "silk.net.maths/2.17.1",
+      "hashPath": "silk.net.maths.2.17.1.nupkg.sha512"
     },
     "Silk.NET.OpenGL/2.15.0": {
       "type": "package",
@@ -2850,166 +2852,180 @@
       "path": "sshnet.security.cryptography/1.3.0",
       "hashPath": "sshnet.security.cryptography.1.3.0.nupkg.sha512"
     },
-    "Stride/4.1.0.1838": {
+    "Stride/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hhboZWIsi0fjmjSRk4UtcWb4MphFhhDZ8wRY+IZDQt2drsw60YNEvRWz4X1Hn4eL/r2L5ym13R99GlGrHIlGoQ==",
-      "path": "stride/4.1.0.1838",
-      "hashPath": "stride.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-8IVdKwYpQuq/cWelKcm5SkvLvPQNQZa1S0uutYqv7KUISLBKdDXuGgVwQf93vn6AbOmGDT3WFuWpWkOMgAEDqQ==",
+      "path": "stride/4.1.0.1898",
+      "hashPath": "stride.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Assets/4.1.0.1838": {
+    "Stride.Assets/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wJJX10ds0pzwDVkttCeIMBKw7uFpsa7Rh62sOzV06Efeh01KuzobveeetBlzS61AttUHa98eibrradB5sNQ1+w==",
-      "path": "stride.assets/4.1.0.1838",
-      "hashPath": "stride.assets.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-s/mQagZqmHTmi1Rw9V6ct/eZ45YSnTa0G8gY8IzRyOeumKt5TIr1UUzA8NbnAnRO9EGpYQTcPOcf4PdXuskcRA==",
+      "path": "stride.assets/4.1.0.1898",
+      "hashPath": "stride.assets.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Assets.Models/4.1.0.1838": {
+    "Stride.Assets.Models/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Tg6FRl35fQWRjO9a1NtB6TsE9Q55RL1mZ+yEEC0NvpnfGaaXRLJMkgfJVxSQG9tJNEP//4IqeJ5ZndBAwpB44w==",
-      "path": "stride.assets.models/4.1.0.1838",
-      "hashPath": "stride.assets.models.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-2+P97wvCz7kt9MHq4foGcvjBsRhhYFgAZqXbIk/E3iFj4moASd8eUWKjK8T7C17sP+du2szm/+oBkZhhuwP+dw==",
+      "path": "stride.assets.models/4.1.0.1898",
+      "hashPath": "stride.assets.models.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Audio/4.1.0.1838": {
+    "Stride.Audio/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hDuMhM6EKnSzYG+/F8pGlI77BzqW+5EQ6uPjsO/NwRV6ePQZDGBwdNSU/TT5xVkcXV+2+IOaAvzHc/pOweHIbA==",
-      "path": "stride.audio/4.1.0.1838",
-      "hashPath": "stride.audio.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-psdntJhyNFd4e/vC0mbNeP7dh2A91aH0USyDozNUYGof5wsFQVKrRoRfMy0hzQGhlc8tadudAjceBC1QzQi3EQ==",
+      "path": "stride.audio/4.1.0.1898",
+      "hashPath": "stride.audio.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core/4.1.0.1838": {
+    "Stride.Core/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B59kMOlXXxF24Imd0UmLJuHw2MmKHA8Cold0aB+4lE68B42+vlc0jQPZrlqi8w6b+FH4lnKGLhVYs5y9gGsazQ==",
-      "path": "stride.core/4.1.0.1838",
-      "hashPath": "stride.core.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-7o7aYCc+urxPErqaDUYM+fhJ67DO/HqsppMNwLRaumevCYAx0Zd0wQj7CBc9ZUO+nFPL1ZM0iu5S5+y0w+HhkQ==",
+      "path": "stride.core/4.1.0.1898",
+      "hashPath": "stride.core.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Assets/4.1.0.1838": {
+    "Stride.Core.Assets/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OnSLt1obDqqy+6L0/Le92M4/NhFKvN5ctxgsZeNiODYGedyJyg2YpVnYjk0U3JaovUYZjh6z4u+rf+cAtYCWnQ==",
-      "path": "stride.core.assets/4.1.0.1838",
-      "hashPath": "stride.core.assets.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-vjGa9geNcWg+9xZdvqxPqaG1gFKhm6dSQ4TEGQ6ng/huP9Jg28XX48rDMMB963+mZQPzkB66gG8SZGkuXhPwUA==",
+      "path": "stride.core.assets/4.1.0.1898",
+      "hashPath": "stride.core.assets.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Assets.CompilerApp/4.1.0.1838": {
+    "Stride.Core.Assets.CompilerApp/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qU1dqhBSWUmD7vcpNyVZ0bpcO4uA72Gz6Vgs1ACpX3/ypQa4IKZ+DJYPDawKgKHB5pPjeas0+8igtgCSuhZafA==",
-      "path": "stride.core.assets.compilerapp/4.1.0.1838",
-      "hashPath": "stride.core.assets.compilerapp.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-CqGt5q9XLxFfID0qkPciV+5JXPbN2v+tI1vzi6h56g+vWtygjA+O33wnmEZMWiExM03BisVFe3AAQowBZ9rkFg==",
+      "path": "stride.core.assets.compilerapp/4.1.0.1898",
+      "hashPath": "stride.core.assets.compilerapp.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.BuildEngine.Common/4.1.0.1838": {
+    "Stride.Core.BuildEngine.Common/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-54D841n0+GPLqIrg8hLBoFCLtUYcfxNEG8f/+DWPXCQ43GjMfbALkzMTTrQ0qGfI1IuFYQJ2N0HM69rGPtTX4Q==",
-      "path": "stride.core.buildengine.common/4.1.0.1838",
-      "hashPath": "stride.core.buildengine.common.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-TFXTot4TwPmDXljkm2lMDHh8VKR4Hqjtx4oYJgWMSSjwBnx1EeJMbiBsvSdj1knb4o4Ex8GPDFOQTMh36g8srQ==",
+      "path": "stride.core.buildengine.common/4.1.0.1898",
+      "hashPath": "stride.core.buildengine.common.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Design/4.1.0.1838": {
+    "Stride.Core.Design/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ld2R7ssTFiVo2Wf2FvO+X0DokPT/EpS7Uido4mGfPl3McLHDlBexoqaabZZJ/6zWqSLzLCQaFzcut4tlkPPmpQ==",
-      "path": "stride.core.design/4.1.0.1838",
-      "hashPath": "stride.core.design.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-YGVgeJbA8LACe6Gsfm5SujNbe02QnDrnjsALL0DZkW+ewxCkI7TGtM3NFXU9oHczMEOUwUsAunWkM+2KNCiqEg==",
+      "path": "stride.core.design/4.1.0.1898",
+      "hashPath": "stride.core.design.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.IO/4.1.0.1838": {
+    "Stride.Core.IO/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VzEb4L5EHFOlYW8NRoUQZNiUrBwkKWhsOiIg1TsziLN9sGilb5HwTgjQAik9vibi5Rz6Y2NyxO+bh7pfQHwU3g==",
-      "path": "stride.core.io/4.1.0.1838",
-      "hashPath": "stride.core.io.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-zGjXua+givXSC0W+pkfRl6yI5pOu3MlUbGw4czTzPncX/7qOhYvjY1ttegwEAiSXds2iRoDvhfv7WIkZB5/FpQ==",
+      "path": "stride.core.io/4.1.0.1898",
+      "hashPath": "stride.core.io.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Mathematics/4.1.0.1838": {
+    "Stride.Core.Mathematics/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-J82DKQtHSWhXCN97Jzd4CRfDFUwblZ+sZsb/TShQJUWfgHE95aFQ7n9qaQ/gguMJIbJg325yIvvTdUBzIB14bQ==",
-      "path": "stride.core.mathematics/4.1.0.1838",
-      "hashPath": "stride.core.mathematics.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-7VHylcHzUC7r8u2SU8iX76VcmC/UuRCbo3XHQurqQZWm3OSnLBWwjnl7u3QmzdUirHYiOdZiExpZYiGiV9GfAw==",
+      "path": "stride.core.mathematics/4.1.0.1898",
+      "hashPath": "stride.core.mathematics.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.MicroThreading/4.1.0.1838": {
+    "Stride.Core.MicroThreading/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ut+5+YhAYwBrbB0p82j6MC0nc7rwI5aX50dca5eSvx4QHZmFrd+luya3d0VrrpmCvpPORH2xJJroBf8Qt5S0/g==",
-      "path": "stride.core.microthreading/4.1.0.1838",
-      "hashPath": "stride.core.microthreading.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-UZxbNk1filRoka0l525fpXpxTXUTWUHfiYnbJ1U2/CBIC1n1WI9Lil4iwE93lOUtmL89Kz1t6nMHQM0McpR3Ww==",
+      "path": "stride.core.microthreading/4.1.0.1898",
+      "hashPath": "stride.core.microthreading.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Packages/4.1.0.1838": {
+    "Stride.Core.Packages/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W7MBS3zG8wUDeEoLtLFMpiw174UfV+y+SqoaHgsxop3MnVnQtWbjSrY4S6rk+QY4jV1u4Zw34PP0kcrTIKFw1A==",
-      "path": "stride.core.packages/4.1.0.1838",
-      "hashPath": "stride.core.packages.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-WRBpiv48216eqnPODERQ5Fnu6xaPgvHr40F6MY2k30Sg2jsypkQss4e2kcXQILnHjCE3pxeQ/RPRvv+JS+3xdA==",
+      "path": "stride.core.packages/4.1.0.1898",
+      "hashPath": "stride.core.packages.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.ProjectTemplating/4.1.0.1838": {
+    "Stride.Core.ProjectTemplating/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A6mVsdZ2K8pzqzDods864sxn0jnkSLLobMm4S+hwxtgQWSdKjbFZjqxPXIHYn3JcYRFa/QRWvcCZkU2jfhrECw==",
-      "path": "stride.core.projecttemplating/4.1.0.1838",
-      "hashPath": "stride.core.projecttemplating.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-EHWblC7AcS05LfYTBI10RkCzoZ+TAYq3e7iCYaUP770RnaUCY+YJmm+Q+Jk+mIaUZAb5h3PJVrOxPjkOrvds4w==",
+      "path": "stride.core.projecttemplating/4.1.0.1898",
+      "hashPath": "stride.core.projecttemplating.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Reflection/4.1.0.1838": {
+    "Stride.Core.Reflection/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-H+8v3LsyyS4bAyC6CPPccRZEYE4r/rcGWyvJrV/aWMcgK/8x43ZqVskiKN+RZHToToLNFW3AD5eY+kyl3nRVWg==",
-      "path": "stride.core.reflection/4.1.0.1838",
-      "hashPath": "stride.core.reflection.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-2Gl05QcbN+a8eRMjFfqOigdB+N59zM7isW38UOOgXukJjZotcCze7mqrVH+7crtHnUQIvSRSxrvutzHQnfJLzA==",
+      "path": "stride.core.reflection/4.1.0.1898",
+      "hashPath": "stride.core.reflection.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Serialization/4.1.0.1838": {
+    "Stride.Core.Serialization/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-foxrm3XSFfeJX/G5I81rB9CnamO4z98uCk2tIsKdjaJaws0Npsy2SD6h8M9JswOEngSDgZ576a8zuAsVYnHiow==",
-      "path": "stride.core.serialization/4.1.0.1838",
-      "hashPath": "stride.core.serialization.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-0UutmvhMUW9zSz/UfYuoathjw9BlkAtdt11/P19HQSHmJBQYQVd3Xmx2TSrFRhn+ikvyWXWHV4Cx3V7psNVLYg==",
+      "path": "stride.core.serialization/4.1.0.1898",
+      "hashPath": "stride.core.serialization.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Shaders/4.1.0.1838": {
+    "Stride.Core.Shaders/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0S28hgOAihru6PiwCfZ9tfSLIB8IMqA/s9WfckPk3hpek+hgbD4WiPwTyGJfZwhj0uN1ZkIdlRtjg7NV8aDVXg==",
-      "path": "stride.core.shaders/4.1.0.1838",
-      "hashPath": "stride.core.shaders.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-8LMQTkS7RVWzRjpDthc8n6elgdQjn2qkka0LKBMFbrUJwZb0z/3jbabzgu8GuO6zpk0kLzENh7tEQC/0Iv7sbg==",
+      "path": "stride.core.shaders/4.1.0.1898",
+      "hashPath": "stride.core.shaders.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Core.Yaml/4.1.0.1838": {
+    "Stride.Core.Yaml/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/iFuncJ1QeLENmgxdgH9rP1V1nBeBSsdroviBeDdsC3tmh8PoharlNYqoE20CDP01Pd82l/jipTcuO5QSeJ24A==",
-      "path": "stride.core.yaml/4.1.0.1838",
-      "hashPath": "stride.core.yaml.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-MfYtnMhl9wyFWKy7eHj5Chipi8bjGRbplEZp1/LqKm2h7Nlo+hmfmHnQMFC2LpScoRuYvOZvT/p+z7k5+sya2Q==",
+      "path": "stride.core.yaml/4.1.0.1898",
+      "hashPath": "stride.core.yaml.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Engine/4.1.0.1838": {
+    "Stride.Engine/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-J7nuF3WEGA3rA4Yd2rn+UYnFcwDQcknUKaR3ebCCiPMVdh+RJjUmfoTRyLNvRDDPLQjAZyoh9vbWQ7xWEn/eow==",
-      "path": "stride.engine/4.1.0.1838",
-      "hashPath": "stride.engine.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-m07JPpdk1KO0IP/ubKLKgAM8HC9GBmOeD6fG5Wy182Km4XFRQXv5SBOjHanIXhWdRnR+IPMUOWUUVMm0KPSFwA==",
+      "path": "stride.engine/4.1.0.1898",
+      "hashPath": "stride.engine.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Games/4.1.0.1838": {
+    "Stride.Games/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-psX9ReAduKx3wNgtWu4it+fb3PVv2F7LOvQvIIDts8bjvYjVRnVQHo++R4jH1qbpwIVKffiNXnjAFFbt/KzFxQ==",
-      "path": "stride.games/4.1.0.1838",
-      "hashPath": "stride.games.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-zCxbY+/IlpTMEG0GMCcWrcbsGLr5XtoBD2PvtFddBClRpdtOE5glpvTwWwKFCbGgjjBW1yOGMvLlA1ltPiivuA==",
+      "path": "stride.games/4.1.0.1898",
+      "hashPath": "stride.games.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Graphics/4.1.0.1838": {
+    "Stride.Graphics/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PRQEGI3w/xpA1L7XkskxIWoGLsMB77bxWxLEFNyZVaZU7ntx8VqgMwHNK6tQpi7Jp6PYUiMplUf5A1FjbkTH/g==",
-      "path": "stride.graphics/4.1.0.1838",
-      "hashPath": "stride.graphics.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-r/xcK1CoU5JsU9h44dL3i0ka3ulDUvQFAjsSm2wvPv2yPptroFWtDAe4uDFFwQECvzwQ1QMkKTlinVxBHbizMQ==",
+      "path": "stride.graphics/4.1.0.1898",
+      "hashPath": "stride.graphics.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Input/4.1.0.1838": {
+    "Stride.Importer.Assimp/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yyvY85AjzJBXzME/iTr3GOzSVLBExT8dleav2M6szCES71+08F3hbodYdckZNtXWkUdfZdz6ROVDE5OXXSU9gQ==",
-      "path": "stride.input/4.1.0.1838",
-      "hashPath": "stride.input.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-VdkhJ4HRTBegVigSGvY3qrvzpGYM3VCKei1Yg1AqWj/QGJG34NOuiNdH9jm1zGMCUhg3DiWvBnleyBD3gXxVnQ==",
+      "path": "stride.importer.assimp/4.1.0.1898",
+      "hashPath": "stride.importer.assimp.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Irony/4.1.0.1838": {
+    "Stride.Importer.Common/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QtMfsNE8qWM6G0SJ80oOYqbFadv21h/JhtVdJ6amAbqvLnmdGFF0vNeogbHM/r8sjeMGb0B8BZ6nuzEnD9nUoA==",
-      "path": "stride.irony/4.1.0.1838",
-      "hashPath": "stride.irony.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-5dgB6tv3FM+gW85W50yMPSzh/TPPNUmeGf6W9aTUaGtu46S2+xEbSyE4mt4433GJScOIBlDGlVDVwM10w/WuVQ==",
+      "path": "stride.importer.common/4.1.0.1898",
+      "hashPath": "stride.importer.common.4.1.0.1898.nupkg.sha512"
+    },
+    "Stride.Input/4.1.0.1898": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4wpf1os1QsUOdk+qEg/Ajb7w9X0bs6SeJgJDCC3+afaIBzNP8R9UTmUp66xe9LViE9SjAEeLUx7XnoRzMZ8R0g==",
+      "path": "stride.input/4.1.0.1898",
+      "hashPath": "stride.input.4.1.0.1898.nupkg.sha512"
+    },
+    "Stride.Irony/4.1.0.1898": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yiu8vewLil4noANp2BOaNgAQNYbL/4aR4zWjHQoZy0rPd58KHaTW68IpITyQlGOEssiPxQSkROW46wEf+vNKCQ==",
+      "path": "stride.irony/4.1.0.1898",
+      "hashPath": "stride.irony.4.1.0.1898.nupkg.sha512"
     },
     "Stride.Mono.TextTemplating/2.1.0-preview-0009-g0d0b6db3ca": {
       "type": "package",
@@ -3018,61 +3034,61 @@
       "path": "stride.mono.texttemplating/2.1.0-preview-0009-g0d0b6db3ca",
       "hashPath": "stride.mono.texttemplating.2.1.0-preview-0009-g0d0b6db3ca.nupkg.sha512"
     },
-    "Stride.Native/4.1.0.1838": {
+    "Stride.Native/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Iuh/jBrz7JiUm/pOFQXf9IMvn2Men78IHAWmagor5xxv/+72lI1Bi8q9O+mmrz7SFPnXuETNZ+rDGuq/QZhPuA==",
-      "path": "stride.native/4.1.0.1838",
-      "hashPath": "stride.native.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-zq+yUIw2VT+SKQVLWg1UuZKp2Xk4Uz1nwnMZqMEU0KvzI0DKV8v+iuG78GhCx+Mq8qNmDVXVjv42Rnysi/rN4Q==",
+      "path": "stride.native/4.1.0.1898",
+      "hashPath": "stride.native.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Navigation/4.1.0.1838": {
+    "Stride.Navigation/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-y5NjbVBAzQdYEM56CUoX6m7+ZpL6rOO0oDYfDl4oFiVtXnJf3YO6v0GYDkDwrnr5hTmyBdJDIW/ZOxB4V0j4EQ==",
-      "path": "stride.navigation/4.1.0.1838",
-      "hashPath": "stride.navigation.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-Dx9NcSGPoxUW2zzQoBdYJPr9A9wy2MG3vsNpsNXeNO2oWXmxCNpB5F1QoRe4YFNns5E8PL0SSY0Rqzdcl+fxPg==",
+      "path": "stride.navigation/4.1.0.1898",
+      "hashPath": "stride.navigation.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Particles/4.1.0.1838": {
+    "Stride.Particles/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iPMC3Yu+VxNcyZ5wSAY7YDjA+jVuZtDezFVrj6c+laDisw+/2vZ+kZ9Vfkj6NKuzX0qV+05pHorfTUnYji9SiQ==",
-      "path": "stride.particles/4.1.0.1838",
-      "hashPath": "stride.particles.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-CfFU2QNgDoCRYRK3q4cvqyx1X0KohlE7ah22v00VuMU5d2SdhBVjIPR4OTMEK6rRaNfsUZ2rC5XwE0LltnQdEQ==",
+      "path": "stride.particles/4.1.0.1898",
+      "hashPath": "stride.particles.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Physics/4.1.0.1838": {
+    "Stride.Physics/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jzVxfBKX4sGYgFN1JxGnbrO00gyDtay2G+6WaSM4WtZuBdBer1wrr9EA0uexh8GuiLW25/Ii7g6K188HFt0bWg==",
-      "path": "stride.physics/4.1.0.1838",
-      "hashPath": "stride.physics.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-LbZopyuvtmyu1sKWK57sAtVR9XX/AN8P5rZPO54dRizNzF947A9zbT4cyhWtivoU29k1jr7d2xNU4/diFttbGw==",
+      "path": "stride.physics/4.1.0.1898",
+      "hashPath": "stride.physics.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Rendering/4.1.0.1838": {
+    "Stride.Rendering/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QeskHeBdSIpKwulU6phxZk699gaOuyEcI/pavuB6L81LiK6ZOuxC8Vnoz+Qfl0OCV4h2h5MTcJuxvUZ9auQq+w==",
-      "path": "stride.rendering/4.1.0.1838",
-      "hashPath": "stride.rendering.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-S93q+7+8xS8mwEE6DTG5JsS+UQpBeixxQdBkbE/ePCar9i7va9azQy5NH9E6xLOL/ri5YD5w8JdPfkMM2hE93g==",
+      "path": "stride.rendering/4.1.0.1898",
+      "hashPath": "stride.rendering.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Shaders/4.1.0.1838": {
+    "Stride.Shaders/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zOqp6DtMoyUFyAv4vPP3JulZ3HjWsq3QvQpVOtZ3IULtVY+SAtiuH0rbCyyYVby+R5ddeiAuYoQ7yI/tdhraSg==",
-      "path": "stride.shaders/4.1.0.1838",
-      "hashPath": "stride.shaders.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-YMVqhl74LkZKS1G3PsUzCavGO4AhDFdTYAZVIwUM073VVpCc7gJmErs3f38SCRCRVDNt3Dp27w/1cYHlB8wy+A==",
+      "path": "stride.shaders/4.1.0.1898",
+      "hashPath": "stride.shaders.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Shaders.Compiler/4.1.0.1838": {
+    "Stride.Shaders.Compiler/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GIWmiWsEYTXQoEMWlUglt1I+sdABaGnmXk7VlL8kWdB30JcyihhOdf6mxLD9wTPUmUq6T7ufJEsGcQo6R1842g==",
-      "path": "stride.shaders.compiler/4.1.0.1838",
-      "hashPath": "stride.shaders.compiler.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-Ojk6TERLdh9wtADTYWn2xpsotcrC3WNtkxT1DL0XgfZllUAk7ZeHImrdZSSK0cy/JC7kSmH59P6KQBRFc55FBA==",
+      "path": "stride.shaders.compiler/4.1.0.1898",
+      "hashPath": "stride.shaders.compiler.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Shaders.Parser/4.1.0.1838": {
+    "Stride.Shaders.Parser/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lHMl9R8VlCcROetaqb5uUIb2C1e6dxtnxL6lAc4szKCYXEr14JIri9/UCR0cROAErkkELH+olJtMJyX6ixS30g==",
-      "path": "stride.shaders.parser/4.1.0.1838",
-      "hashPath": "stride.shaders.parser.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-hIMVFq6KfilWEYB/hupQKVUDGlPDhCqizksE2HMKJfTev0DgMIb5wDqNIfRkH4VhL4Y5Q8QXWIcx0gUdUnbDhQ==",
+      "path": "stride.shaders.parser/4.1.0.1898",
+      "hashPath": "stride.shaders.parser.4.1.0.1898.nupkg.sha512"
     },
     "Stride.SharpFont/1.0.0": {
       "type": "package",
@@ -3081,47 +3097,47 @@
       "path": "stride.sharpfont/1.0.0",
       "hashPath": "stride.sharpfont.1.0.0.nupkg.sha512"
     },
-    "Stride.SpriteStudio.Offline/4.1.0.1838": {
+    "Stride.SpriteStudio.Offline/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8mlIBv/DoeBD1rQmPwCSO3bT+QYh8udIyYwCu5fDC/riSX3WMn3HUhs6rCgAbPfflN9keQvYKwYrXWemyv/bwA==",
-      "path": "stride.spritestudio.offline/4.1.0.1838",
-      "hashPath": "stride.spritestudio.offline.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-DVCvVcRlpqrdma8ideLUvqFcz22B1ln7tGItAo6PLqmnnVaJU/GWD0RtfCrBr6XMqiCFV+uLFIY9nP+5EDr8Qg==",
+      "path": "stride.spritestudio.offline/4.1.0.1898",
+      "hashPath": "stride.spritestudio.offline.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.SpriteStudio.Runtime/4.1.0.1838": {
+    "Stride.SpriteStudio.Runtime/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MGkH9y8GXn3cxDKYu8Z86ZjYBZkPChcLe14jj4UvgpE683ZDuUKV42mtby+n/4D1vJY/zPM55jrp3CS1B2Lx0A==",
-      "path": "stride.spritestudio.runtime/4.1.0.1838",
-      "hashPath": "stride.spritestudio.runtime.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-+fcHKkGlMsgixU2xUKBwPYf0cHptITN18OVw8PCpFrCGhdN/FFH8taLXjKG2Cw77TLg405g7NZq6rAGUR7YbKg==",
+      "path": "stride.spritestudio.runtime/4.1.0.1898",
+      "hashPath": "stride.spritestudio.runtime.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.TextureConverter/4.1.0.1838": {
+    "Stride.TextureConverter/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E5ebrGJMgMSl42Aig7VMDdIDsGpW1Vr2Xuaq7Na5BTI1DrNG/hIT8lDESbhvamybOCODpTY2ndKBj1PgpiAKfg==",
-      "path": "stride.textureconverter/4.1.0.1838",
-      "hashPath": "stride.textureconverter.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-ZJLsM+riSk8pfY8G7gA9M9Q/g1DGpxFWMJcJKpIo3KK9ceUwK/FxlN/l/tNdiTn/pSexO9SARgw00JtRwYjvMA==",
+      "path": "stride.textureconverter/4.1.0.1898",
+      "hashPath": "stride.textureconverter.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.UI/4.1.0.1838": {
+    "Stride.UI/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TEmLFrBAsFdRv0qItM4JNTwe17Nf3KBKgwzHbKomaRRDi/Pa4xs3Un/v6SfsD0lrZXBcFvKTRWUWXr/8tJBC4Q==",
-      "path": "stride.ui/4.1.0.1838",
-      "hashPath": "stride.ui.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-l/mztB863nxZmjC1LiP/kdk3hk2ZtLN4S1ZhQ1fRUeiFsu0Jf00uTzkfE6GmQ+GLrQj8eLQxScpW8jvrRUvWBA==",
+      "path": "stride.ui/4.1.0.1898",
+      "hashPath": "stride.ui.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.Video/4.1.0.1838": {
+    "Stride.Video/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9ZNbMAbQjrGBmd2WiDEExXjl2Kc/SroNpyus6pizWrb0I10SwDgi/KrNlmU2d259O/hBKWUsE//ttY+5/WFd8A==",
-      "path": "stride.video/4.1.0.1838",
-      "hashPath": "stride.video.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-oP13hq3CyVQtK9mv6VN/Jy4T6dA/9ghha+ui8kfMtq3qj+19Sqt+tvvDX4gBETlYw46TVshADcVsgNRSbJ2f8Q==",
+      "path": "stride.video/4.1.0.1898",
+      "hashPath": "stride.video.4.1.0.1898.nupkg.sha512"
     },
-    "Stride.VirtualReality/4.1.0.1838": {
+    "Stride.VirtualReality/4.1.0.1898": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qJSAcQHyZfELHa+JKTkZfY7705IlshbTpDNyDGm8kc8wQcIj3P2y6Drm6WsMtS3ruoGEaYeVYXlck88vn2XgnA==",
-      "path": "stride.virtualreality/4.1.0.1838",
-      "hashPath": "stride.virtualreality.4.1.0.1838.nupkg.sha512"
+      "sha512": "sha512-w67iIgZ14J+xOfVLSsC+0pkSdNteg5sDK1Ase+wSvg8T1zTc3MubKyywAFDg7azeltJAVep/ciyfVXr8gCJXLA==",
+      "path": "stride.virtualreality/4.1.0.1898",
+      "hashPath": "stride.virtualreality.4.1.0.1898.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -3130,12 +3146,12 @@
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
     },
-    "System.Buffers/4.5.1": {
+    "System.Buffers/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
-      "path": "system.buffers/4.5.1",
-      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
+      "sha512": "sha512-ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
+      "path": "system.buffers/4.3.0",
+      "hashPath": "system.buffers.4.3.0.nupkg.sha512"
     },
     "System.CodeDom/4.7.0": {
       "type": "package",
@@ -3368,12 +3384,12 @@
       "path": "system.management/4.7.0",
       "hashPath": "system.management.4.7.0.nupkg.sha512"
     },
-    "System.Memory/4.5.4": {
+    "System.Memory/4.5.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
@@ -3634,19 +3650,19 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Text.Encodings.Web/6.0.0": {
+    "System.Text.Encodings.Web/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
-      "path": "system.text.encodings.web/6.0.0",
-      "hashPath": "system.text.encodings.web.6.0.0.nupkg.sha512"
+      "sha512": "sha512-OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
+      "path": "system.text.encodings.web/7.0.0",
+      "hashPath": "system.text.encodings.web.7.0.0.nupkg.sha512"
     },
-    "System.Text.Json/6.0.0": {
+    "System.Text.Json/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
-      "path": "system.text.json/6.0.0",
-      "hashPath": "system.text.json.6.0.0.nupkg.sha512"
+      "sha512": "sha512-DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
+      "path": "system.text.json/7.0.0",
+      "hashPath": "system.text.json.7.0.0.nupkg.sha512"
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
@@ -3752,6 +3768,13 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Ultz.Native.Assimp/5.2.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rXsj+NHw4xkKKUWhvDRVDsa+fYaJifEvWqVWx3gwFbqtGZ1pu2iA1zFR+wMj439rAEYdmeE6IqQBXzzUGxyXzQ==",
+      "path": "ultz.native.assimp/5.2.5.1",
+      "hashPath": "ultz.native.assimp.5.2.5.1.nupkg.sha512"
     },
     "Ultz.Native.SDL/2.0.14.1": {
       "type": "package",

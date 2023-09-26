@@ -19,27 +19,57 @@ namespace RotationExperiment
         {
             if (Input.HasKeyboard)
             {
-                float angle = 0.4f;//90f;
-                Core.Transform.Rotation = LookAtWithOnlyOneFreeAxis(Core, Weapon.Transform.Position);
+                float angled = Suplementary.DegreesToRadians(12f);
+
                 if (Input.IsKeyDown(Stride.Input.Keys.Z))
                 {
-                    //Core.Transform.Rotation *= RotationY(0.0069f);
-                    Weapon.Transform.Position = RotationController.ChangePositionYAxis(angle, Weapon.Transform.Position, TypeOfRotationY.CounterClockwise);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionYAxis(angle, LeftShoulder.Transform.Position, TypeOfRotationY.CounterClockwise);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionYAxis(angle, RightShoulder.Transform.Position, TypeOfRotationY.CounterClockwise);
+                    float angleInRadians = angled; // Assuming 'angled' is in radians
+                    Core.Transform.Rotation *= Quaternion.RotationY(-angled);
+
+                    // Apply the 2D rotation to the objects
+                    Matrix2x2 rotation2x2 = new Matrix2x2(
+                        (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
+                        (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+                    );
+
+                    //Vector3 positionOffset = new Vector3(0, 0, 0); // Adjust as needed
+
+                    Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, Weapon.Transform.Position /*+ positionOffset*/);
+                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, LeftShoulder.Transform.Position /*+ positionOffset */);
+                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, RightShoulder.Transform.Position /*+ positionOffset */);
                 }
                 else if (Input.IsKeyDown(Stride.Input.Keys.X))
                 {
-                    //Core.Transform.Rotation *= RotationY(-0.0069f);
-                    Weapon.Transform.Position = RotationController.ChangePositionYAxis(angle, Weapon.Transform.Position);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionYAxis(angle, LeftShoulder.Transform.Position);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionYAxis(angle, RightShoulder.Transform.Position);
+                    float angleInRadians = -angled; // Assuming 'angled' is in radians
+                    Core.Transform.Rotation *= Quaternion.RotationY(angled);
+
+                    // Apply the 2D rotation to the objects
+                    Matrix2x2 rotation2x2 = new Matrix2x2(
+                        (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
+                        (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+                    );
+
+                    //Vector3 positionOffset = new Vector3(0, 0, 0); // Adjust as needed
+
+                    Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, Weapon.Transform.Position /*+ positionOffset*/);
+                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, LeftShoulder.Transform.Position /*+ positionOffset*/);
+                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, RightShoulder.Transform.Position /*+ positionOffset*/);
                 }
             }
         }
 
+        /// <summary>
+        /// This enum represent each of the 3 dimensions, X, Y and Z
+        /// </summary>
         public enum Axis { X, Y, Z }
 
+        /// <summary>
+        /// Tidal lock the Entity obj in the direction of the Vector3 called destination, the tidal lock is in the Axis determined by the parameter axis.
+        /// </summary>
+        /// <param name="obj">the entity to be tidal locked</param>
+        /// <param name="destination">the point at the which obj is tidal locked</param>
+        /// <param name="axis">the axis by which the obj is tidal lock</param>
+        /// <returns></returns>
         public static Quaternion LookAtWithOnlyOneFreeAxis(Entity obj, Vector3 destination, Axis axis = Axis.Y)
         {
             try
@@ -78,37 +108,63 @@ namespace RotationExperiment
         }
 
         /// <summary>
-        /// Rotate the position of the entity in the direction of the destination - NO FUNCIONA -
+        /// This method returns a vector3 with the result position of the vector3 'v3' transformed by the rotation matrix
         /// </summary>
-        /// <param name="obj">The entity than is going to be rotated</param>
-        /// <param name="destination">The direction than the entity should be rotated to</param>
-        //public static Stride.Core.Mathematics.Quaternion RotateToDirection(Entity obj, Vector3 destination)
-        //{
-        //    Vector3 direction = destination - obj.Transform.Position;
-        //    Stride.Core.Mathematics.Quaternion rotation = Stride.Core.Mathematics.Quaternion.BetweenDirections(obj.Transform.WorldMatrix.TranslationVector, direction);
-        //    obj.Transform.Rotation = Stride.Core.Mathematics.Quaternion.Lerp(obj.Transform.Rotation, rotation, 1);
-        //    return Stride.Core.Mathematics.Quaternion.Lerp(obj.Transform.Rotation, rotation, 1);
-        //}
+        /// <param name="m2x2">the 2x2 matrix which define the rotation</param>
+        /// <param name="v3">the vector3 to be transformed by the rotation matrix m2x2</param>
+        /// <returns>a new vector3 which is the v3 already transformde by the rotation matrix m2x2</returns>
+        static Vector3 ChangePositionMatrixBased(Matrix2x2 m2x2, Vector3 v3)
+        {
+            Vector2 vec2 = new Vector2(v3.X, v3.Z);
+            Vector2 v2result = m2x2 * vec2;
+            return new Vector3(v2result.X, 0, v2result.Y);
+        }
 
-        //static void TidalLocking(Entity entityA, Entity entityB)
-        //{
-        //    if (entityA != null && entityB != null)
-        //    {
-        //        // Calculate the direction from Entity A to Entity B
-        //        var direction = entityB.Transform.WorldMatrix.TranslationVector - entityA.Transform.WorldMatrix.TranslationVector;
+        /// <summary>
+        /// It rotates the vector3 v3 by the internal rotation matrix according to the angle of the number received
+        /// </summary>
+        /// <param name="angle">the angle of rotation of the internal rotation matrix of the function (in degrees)</param>
+        /// <param name="v3">the vector3 to be transformed by a rotation matrix rotated by the number of  the angle (in degrees)</param>
+        /// <param name="typeOfRotationY">NOT IN USE: It defines what direction is the rotation</param>
+        /// <returns></returns>
+        static Vector3 ChangePositionYAxis(float angle, Vector3 v3, TypeOfRotationY typeOfRotationY = TypeOfRotationY.Clockwise)
+        {
+            /*Matrix3x3 rotationMatrix = new Matrix3x3(
+                cosTheta, 0, sinTheta,
+                0, 1, 0,
+                -sinTheta, 0, cosTheta
+            );*/
 
-        //        // Ensure the direction is not zero (to avoid division by zero)
-        //        if (direction.LengthSquared() > 0.001f)
-        //        {
-        //            // Calculate the rotation to face Entity B
-        //            var rotation = Quaternion.RotationMatrix(Matrix.RotationLookAtLH(Vector3.UnitZ, direction, Vector3.UnitY));
+            Matrix2x2 rotationMatrix = new Matrix2x2(angle, typeOfRotationY);
+            Vector2 vec2 = new Vector2(v3.X, v3.Z);
+            Vector2 v2result = rotationMatrix * vec2;
+            return new Vector3(v2result.X, 0, v2result.Y);
+        }
 
-        //            // Apply the rotation to Entity A
-        //            entityA.Transform.Rotation = rotation;
-        //        }
-        //    }
-        //}
+        /// <summary>
+        /// Creates a quaternion that rotates around the y-axis.
+        /// </summary>
+        /// <param name="angle">Angle of rotation in radians.</param>
+        /// <param name="result">When the method completes, contains the newly created quaternion.</param>
+        public static void RotationY(float angle, out Stride.Core.Mathematics.Quaternion result)
+        {
+            float halfAngle = angle * 0.5f;
+            result = new Stride.Core.Mathematics.Quaternion(0.0f, MathF.Sin(halfAngle), 0.0f, MathF.Cos(halfAngle));
+        }
 
+        /// <summary>
+        /// Creates a quaternion that rotates around the y-axis.
+        /// </summary>
+        /// <param name="angle">Angle of rotation in radians.</param>
+        /// <returns>The created rotation quaternion.</returns>
+        public static Stride.Core.Mathematics.Quaternion RotationY(float angle)
+        {
+            Stride.Core.Mathematics.Quaternion result;
+            RotationY(angle, out result);
+            return result;
+        }
+
+        //UNUSUED
         public static Matrix4x4 RotationMatrix(Vector3 forward, Vector3 up)
         {
             forward.Normalize();
@@ -148,43 +204,5 @@ namespace RotationExperiment
 
             return rotationMatrix;
         }
-
-        static Vector3 ChangePositionYAxis(float angle, Vector3 v3, TypeOfRotationY typeOfRotationY = TypeOfRotationY.Clockwise)
-        {
-            /*Matrix3x3 rotationMatrix = new Matrix3x3(
-                cosTheta, 0, sinTheta,
-                0, 1, 0,
-                -sinTheta, 0, cosTheta
-            );*/
-
-            Matrix2x2 rotationMatrix = new Matrix2x2(angle, typeOfRotationY);
-            Vector2 vec2 = new Vector2(v3.X, v3.Z);
-            Vector2 v2result = rotationMatrix * vec2;
-            return new Vector3(v2result.X, 0, v2result.Y);
-        }
-
-        /// <summary>
-        /// Creates a quaternion that rotates around the y-axis.
-        /// </summary>
-        /// <param name="angle">Angle of rotation in radians.</param>
-        /// <param name="result">When the method completes, contains the newly created quaternion.</param>
-        public static void RotationY(float angle, out Stride.Core.Mathematics.Quaternion result)
-        {
-            float halfAngle = angle * 0.5f;
-            result = new Stride.Core.Mathematics.Quaternion(0.0f, MathF.Sin(halfAngle), 0.0f, MathF.Cos(halfAngle));
-        }
-
-        /// <summary>
-        /// Creates a quaternion that rotates around the y-axis.
-        /// </summary>
-        /// <param name="angle">Angle of rotation in radians.</param>
-        /// <returns>The created rotation quaternion.</returns>
-        public static Stride.Core.Mathematics.Quaternion RotationY(float angle)
-        {
-            Stride.Core.Mathematics.Quaternion result;
-            RotationY(angle, out result);
-            return result;
-        }
-
     }
 }

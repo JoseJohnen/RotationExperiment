@@ -7,7 +7,6 @@ Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
         - ref!! 38621467-36a3-4ae2-8ab9-c9e1531a18aa
-        - ref!! 4bdb71c2-d43c-4d1d-9438-ea98585dd6e8
         - ref!! 32b704c6-eeb3-40c1-a3fb-73de3a527c39
         - ref!! 40184ae4-fb3f-4f5c-9300-0b59215ac7ed
         - ref!! 5e017f57-3245-4347-97bf-0ae4e25b19a8
@@ -77,7 +76,7 @@ Hierarchy:
                 Components:
                     1d56808c162edffebd30b3e70ab1a7a9: !TransformComponent
                         Id: 3a975a1f-2c86-4b5a-b884-b50d363ebea0
-                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Position: {X: 0.0, Y: 2.0, Z: -3.7563014}
                         Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -181,7 +180,8 @@ Hierarchy:
                         Position: {X: 0.0, Y: 0.0, Z: -2.5}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
+                        Children:
+                            99aec20c2a6a52147b373874c14c2b8e: ref!! 3a975a1f-2c86-4b5a-b884-b50d363ebea0
                     bc18101b84e90a8cc71e9659ec431b66: !ModelComponent
                         Id: abacb54b-8f96-4f70-a705-867e3afb5f6a
                         Model: 6202289c-39d2-4444-819c-7f245bf26d80:Cone

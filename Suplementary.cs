@@ -16,5 +16,11 @@ namespace RotationExperiment
             //radians
             return Convert.ToSingle(degrees * (Math.PI / 180));
         }
+
+        // Returns the length of this vector (RO).
+        public static float Magnitude(this Stride.Core.Mathematics.Vector3 v3)
+        {
+            return MathF.Sqrt(v3.X * v3.X + v3.Y * v3.Y + v3.Z * v3.Z);
+        }
     }
 }

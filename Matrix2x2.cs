@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stride.Core.Mathematics;
+using System;
 using System.Numerics;
 
 namespace RotationExperiment
@@ -45,6 +46,14 @@ namespace RotationExperiment
             }
         }
 
+        public Matrix2x2(Matrix matrix)
+        {
+            this.M11 = matrix.M11;
+            this.M12 = matrix.M12;
+            this.M21 = matrix.M21;
+            this.M22 = matrix.M22;
+        }
+
         public static System.Numerics.Vector2 operator *(Matrix2x2 f, System.Numerics.Vector2 g)
         {
             float x = (f.M11 * g.X) + (f.M12 * g.Y);
@@ -58,5 +67,6 @@ namespace RotationExperiment
             float y = (f.M21 * g.X) + (f.M22 * g.Y);
             return new Stride.Core.Mathematics.Vector2(x, y);
         }
+
     }
 }
