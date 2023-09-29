@@ -19,9 +19,9 @@ namespace RotationExperiment
         {
             if (Input.HasKeyboard)
             {
-                float angled = Suplementary.DegreesToRadians(12f);
+                float angled = Suplementary.DegreesToRadians(0.4f);
 
-                if (Input.IsKeyDown(Stride.Input.Keys.Z))
+                if (Input.IsKeyDown(Stride.Input.Keys.X))
                 {
                     float angleInRadians = angled; // Assuming 'angled' is in radians
                     Core.Transform.Rotation *= Quaternion.RotationY(-angled);
@@ -38,7 +38,7 @@ namespace RotationExperiment
                     LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, LeftShoulder.Transform.Position /*+ positionOffset */);
                     RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, RightShoulder.Transform.Position /*+ positionOffset */);
                 }
-                else if (Input.IsKeyDown(Stride.Input.Keys.X))
+                else if (Input.IsKeyDown(Stride.Input.Keys.Z))
                 {
                     float angleInRadians = -angled; // Assuming 'angled' is in radians
                     Core.Transform.Rotation *= Quaternion.RotationY(angled);
