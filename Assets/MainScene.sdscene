@@ -14,6 +14,8 @@ Hierarchy:
         - ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
         - ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
         - ref!! 7d441800-521f-48d7-bc40-8df6c6303d45
+        - ref!! a29e50b3-22c1-47b5-8133-ad7875adeeea
+        - ref!! 72e5b4c4-9588-4949-a7f0-2c199e9c34e8
     Parts:
         -   Entity:
                 Id: 32b704c6-eeb3-40c1-a3fb-73de3a527c39
@@ -116,7 +118,7 @@ Hierarchy:
                 Components:
                     21cbe272aea8cb3de2613384567ec8d4: !TransformComponent
                         Id: 38e7533f-e696-42d2-b608-d99a83668990
-                        Position: {X: -2.5, Y: 0.0, Z: 0.0}
+                        Position: {X: -2.5, Y: 0.5, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -125,6 +127,22 @@ Hierarchy:
                         Model: 6202289c-39d2-4444-819c-7f245bf26d80:Cone
                         Materials:
                             163aa3e8b9729ea76964b6570bbff479~0: f6447f8a-1b2d-4523-b736-b3337d9c9bfa:ClearCoat
+        -   Entity:
+                Id: 72e5b4c4-9588-4949-a7f0-2c199e9c34e8
+                Name: DebugController
+                Components:
+                    7b0f05a8c9ae2e22f3cfd9140be221f4: !TransformComponent
+                        Id: fa1e3a2f-8818-4659-bc12-1d91086aeeb3
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    57e1177d488ca4299d95d9134288fb2f: !RotationExperiment.DebugController,RotationExperiment
+                        Id: e1053fbf-b586-40c4-8ffb-f3e236ed3ff5
+                        Core: ref!! 5e017f57-3245-4347-97bf-0ae4e25b19a8
+                        Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
+                        LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
+                        RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
         -   Entity:
                 Id: 7d441800-521f-48d7-bc40-8df6c6303d45
                 Name: RotationController
@@ -141,6 +159,26 @@ Hierarchy:
                         Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
                         LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
                         RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
+        -   Entity:
+                Id: a29e50b3-22c1-47b5-8133-ad7875adeeea
+                Name: MovementController
+                Components:
+                    99a226bf3dff367c557daf89e767291f: !TransformComponent
+                        Id: 8742ec28-73c6-46eb-917d-be8667f82210
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    4745fa7d409a54c2143fcca8037c1c64: !RotationExperiment.MovementController,RotationExperiment
+                        Id: 533bbd3f-cd68-4ead-a095-b82e46a6031b
+                        Core: ref!! 5e017f57-3245-4347-97bf-0ae4e25b19a8
+                        Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
+                        LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
+                        RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
+                        UpdatePosition: {X: 0.0, Y: 0.0, Z: 0.0}
+                        X: 0.0
+                        Y: 0.5
+                        Z: 0.0
         -   Entity:
                 Id: b0fbe969-927a-434e-8c21-ca51219d1177
                 Name: point
@@ -162,7 +200,7 @@ Hierarchy:
                 Components:
                     49f28c45446663afa7094bbaaa7d79f4: !TransformComponent
                         Id: 8550485f-dcf2-4256-a687-16e67051619c
-                        Position: {X: 2.5, Y: 0.0, Z: 0.0}
+                        Position: {X: 2.5, Y: 0.5, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -177,7 +215,7 @@ Hierarchy:
                 Components:
                     ae829fc010f42436747b0ea5ee9bacb8: !TransformComponent
                         Id: edf7162e-a97f-44da-979b-d0261df37caa
-                        Position: {X: 0.0, Y: 0.0, Z: -2.5}
+                        Position: {X: 0.0, Y: 0.5, Z: -2.5}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
