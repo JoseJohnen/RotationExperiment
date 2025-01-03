@@ -22,15 +22,15 @@
           "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net8.0"
         ],
         "sources": {
           "D:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -38,40 +38,46 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Stride.Core.Assets.CompilerApp": {
               "include": "Build, BuildTransitive",
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.Engine": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.Navigation": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.Particles": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.Physics": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.UI": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             },
             "Stride.Video": {
               "target": "Package",
-              "version": "[4.1.0.1898, )"
+              "version": "[4.2.0.2267, )"
             }
           },
           "imports": [
@@ -90,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

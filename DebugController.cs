@@ -9,6 +9,8 @@ namespace RotationExperiment
         public Entity Weapon;
         public Entity LeftShoulder;
         public Entity RightShoulder;
+        
+        public Entity Target;
 
         public override void Update()
         {
@@ -17,7 +19,8 @@ namespace RotationExperiment
             DebugText.Print("LeftShoulder.Transform.Position: " + LeftShoulder.Transform.Position, new Int2(200, 450));
             DebugText.Print("RightShoulder.Transform.Position: " + RightShoulder.Transform.Position, new Int2(200, 430));
 
-            DebugText.Print("RotationController.angleInRadians: " + RotationController.angleInRadians, new Int2(200, 390));
+            DebugText.Print("Target.Transform.Position: " + Target.Transform.Position, new Int2(200, 390));
+            //DebugText.Print("RotationController.angleInRadians: " + RotationController.angleInRadians, new Int2(200, 390));
         }
     }
 }

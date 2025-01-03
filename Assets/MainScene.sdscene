@@ -10,12 +10,14 @@ Hierarchy:
         - ref!! 32b704c6-eeb3-40c1-a3fb-73de3a527c39
         - ref!! 40184ae4-fb3f-4f5c-9300-0b59215ac7ed
         - ref!! 5e017f57-3245-4347-97bf-0ae4e25b19a8
-        - ref!! c874563d-f57c-400f-be6e-f64146321672
+        - ref!! 4be82584-97e9-45ad-97ca-891da47212e3
         - ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
         - ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
         - ref!! 7d441800-521f-48d7-bc40-8df6c6303d45
         - ref!! a29e50b3-22c1-47b5-8133-ad7875adeeea
         - ref!! 72e5b4c4-9588-4949-a7f0-2c199e9c34e8
+        - ref!! c874563d-f57c-400f-be6e-f64146321672
+        - ref!! 4bdb71c2-d43c-4d1d-9438-ea98585dd6e8
     Parts:
         -   Entity:
                 Id: 32b704c6-eeb3-40c1-a3fb-73de3a527c39
@@ -98,6 +100,20 @@ Hierarchy:
                                 BiasParameters: {}
                         Intensity: 20.0
         -   Entity:
+                Id: 4be82584-97e9-45ad-97ca-891da47212e3
+                Name: Weapon
+                Components:
+                    2ed3191473ad4a137e53b9e05b0cd9e5: !TransformComponent
+                        Id: 8042c436-e4a3-4be5-b64a-5c3ebd66bf38
+                        Position: {X: 0.0, Y: 0.5, Z: -2.5}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    aac2118dd34f55097ee57f86a8a3f8c7: !ModelComponent
+                        Id: 69b5b3fc-cdaa-4908-b69f-b37ea3163e9e
+                        Model: 40ba7036-9c10-4b9c-8d5d-dfeee6f2e3fe:Target
+                        Materials: {}
+        -   Entity:
                 Id: 5e017f57-3245-4347-97bf-0ae4e25b19a8
                 Name: Sphere
                 Components:
@@ -143,6 +159,7 @@ Hierarchy:
                         Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
                         LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
                         RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
+                        Target: ref!! 4be82584-97e9-45ad-97ca-891da47212e3
         -   Entity:
                 Id: 7d441800-521f-48d7-bc40-8df6c6303d45
                 Name: RotationController
@@ -156,9 +173,18 @@ Hierarchy:
                     b57125cbe649b86a3aa1d5ad47e39a62: !RotationExperiment.RotationController,RotationExperiment
                         Id: b0893be0-a0fd-4564-b630-910c771e1622
                         Core: ref!! 5e017f57-3245-4347-97bf-0ae4e25b19a8
-                        Weapon: ref!! c874563d-f57c-400f-be6e-f64146321672
+                        CorePos: {X: 0.0, Y: 0.0, Z: 0.0}
+                        CoreBase: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Weapon: ref!! 4be82584-97e9-45ad-97ca-891da47212e3
+                        WeaponPos: {X: 0.0, Y: 0.0, Z: 0.0}
+                        WeaponBase: {X: 0.0, Y: 0.0, Z: 0.0}
                         LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
+                        LeftShoulderPos: {X: 0.0, Y: 0.0, Z: 0.0}
+                        LeftShoulderBase: {X: 0.0, Y: 0.0, Z: 0.0}
                         RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
+                        RightShoulderPos: {X: 0.0, Y: 0.0, Z: 0.0}
+                        RightShoulderBase: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Target: ref!! c874563d-f57c-400f-be6e-f64146321672
         -   Entity:
                 Id: a29e50b3-22c1-47b5-8133-ad7875adeeea
                 Name: MovementController
@@ -176,9 +202,6 @@ Hierarchy:
                         LeftShoulder: ref!! 6df717c3-1121-4c94-a1fc-c489d9ef4f9b
                         RightShoulder: ref!! c2afff0a-da96-4ceb-ae44-41d465c756cb
                         UpdatePosition: {X: 0.0, Y: 0.0, Z: 0.0}
-                        X: 0.0
-                        Y: 0.5
-                        Z: 0.0
         -   Entity:
                 Id: b0fbe969-927a-434e-8c21-ca51219d1177
                 Name: point
@@ -211,15 +234,14 @@ Hierarchy:
                             1657726937af767d0b4d7650ddfcdc74~0: b1b7e04d-09e2-458d-a04d-3ba46ef99f36:Material
         -   Entity:
                 Id: c874563d-f57c-400f-be6e-f64146321672
-                Name: Weapon
+                Name: Target
                 Components:
                     ae829fc010f42436747b0ea5ee9bacb8: !TransformComponent
                         Id: edf7162e-a97f-44da-979b-d0261df37caa
                         Position: {X: 0.0, Y: 0.5, Z: -2.5}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Rotation: {X: -0.70710677, Y: 0.0, Z: 0.0, W: 0.70710677}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children:
-                            99aec20c2a6a52147b373874c14c2b8e: ref!! 3a975a1f-2c86-4b5a-b884-b50d363ebea0
+                        Children: {}
                     bc18101b84e90a8cc71e9659ec431b66: !ModelComponent
                         Id: abacb54b-8f96-4f70-a705-867e3afb5f6a
                         Model: 6202289c-39d2-4444-819c-7f245bf26d80:Cone

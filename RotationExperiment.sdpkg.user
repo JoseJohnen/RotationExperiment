@@ -2,15 +2,15 @@
 Settings:
     Package/SceneSettings:
         ecc293e1-5e39-49d5-9776-2ffab36a5325:
-            CamPosition: {X: 0.735445, Y: 31.017849, Z: -4.405886}
-            CamPitchYaw: {X: -1.5707964, Y: 0.0055216914}
+            CamPosition: {X: 9.105181, Y: 5.920854, Z: 3.4471443}
+            CamPitchYaw: {X: -0.47236836, Y: 1.1524043}
             CamProjection: Perspective
             CamVerticalFieldOfView: 45.0
             CamOrthographicSize: 10.0
             CamNearClipPlane: 0.1
             CamFarClipPlane: 1000.0
             CamAspectRatio: 1.7777778
-            CamMoveSpeed: 3.0
+            CamMoveSpeed: 1.0
             TranslationSnapActive: false
             TranslationSnapValue: 1.0
             RotationSnapActive: false

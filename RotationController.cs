@@ -27,6 +27,8 @@ namespace RotationExperiment
         public Vector3 RightShoulderPos;
         public Vector3 RightShoulderBase;
 
+        public Entity Target;
+
         public static float angleInRadians = 0;
 
         public override void Start()
@@ -38,163 +40,171 @@ namespace RotationExperiment
             RightShoulderBase = RightShoulder.Transform.Position;
         }
 
+        float angleRotatedInMatrix = 0;
         public override void Update()
         {
             if (Input.HasKeyboard)
             {
-                float angled = Suplementary.DegreesToRadians(0.4f);
-                //float rotationPointX = Core.Transform.Position.X;
-                //float rotationPointY = Core.Transform.Position.Y;
+                //float result = CalculateRotationAngleAround(Core.Transform.Position, Target.Transform.Position);
+                //DebugText.Print("Atan2: " + result, new Int2(200,200));
 
-                if (Input.IsKeyDown(Stride.Input.Keys.X))
+                //float angled = Suplementary.DegreesToRadians(0.4f);
+                ////DebugText.Print("Angle: (Degrees)" + Suplementary.RadiansToDegrees(angleRotatedInMatrix), new Int2(200, 220));
+                ////DebugText.Print("Angle: (Degrees)" + angleRotatedInMatrix, new Int2(200, 240));
+                ////float rotationPointX = Core.Transform.Position.X;
+                ////float rotationPointY = Core.Transform.Position.Y;
+
+                if (Input.IsKeyDown(Stride.Input.Keys.Z))
                 {
-                    angleInRadians = angled; // Assuming 'angled' is in radians
-                    Core.Transform.Rotation *= Quaternion.RotationY(-angled);
-
-                    // Apply the 2D rotation to the objects
-                    Matrix2x2 rotation2x2 = new Matrix2x2(
-                        (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
-                        (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
-                    );
-
-                    // Convert it to a 3x3 equivalent
-                    Matrix3x3 rotation3x3 = new Matrix3x3(
-                        rotation2x2.M11, 0f, rotation2x2.M12,
-                        0f, 1f, 0f,
-                        rotation2x2.M21, 0f, rotation2x2.M22
-                    );
-
-                    // Calculate the required translation matrices
-                    /*Matrix3x3 translateToOrigin = new Matrix3x3(
-                        1f, 0f, -rotationPointX,
-                        0f, 1f, -rotationPointY,
-                        0f, 0f, 1f
-                    );
-
-                    Matrix3x3 translateBack = new Matrix3x3(
-                        1f, 0f, rotationPointX,
-                        0f, 1f, rotationPointY,
-                        0f, 0f, 1f
-                    );*/
-
-                    // Combine the matrices to apply translation, rotation, and then translation back
-                    //Matrix3x3 finalTransformation = translateBack * rotation3x3 * translateToOrigin;
-
-                    //Vector3 positionOffset = new Vector3(0, 0, 0); // Adjust as needed
-
-                    /*Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, Weapon.Transform.Position);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, LeftShoulder.Transform.Position);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, RightShoulder.Transform.Position);*/
-
-                    //Iniciate translation
-                    CorePos = Core.Transform.Position;
-                    WeaponPos = Weapon.Transform.Position;
-                    LeftShoulderPos = LeftShoulder.Transform.Position;
-                    RightShoulderPos = RightShoulder.Transform.Position;
-
-                    Vector3 mod = Core.Transform.Position;
-                    if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-                    {
-                        Weapon.Transform.Position -= mod;
-                        LeftShoulder.Transform.Position -= mod;
-                        RightShoulder.Transform.Position -= mod;
-                    }
-
-                    Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, Weapon.Transform.Position);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, LeftShoulder.Transform.Position);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, RightShoulder.Transform.Position);
-
-                    /*Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, WeaponPos);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, LeftShoulderPos);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, RightShoulderPos);*/
-
-                    //Core.Transform.Position += CorePos;
-                    //Weapon.Transform.Position += WeaponPos;
-                    //LeftShoulder.Transform.Position += LeftShoulderPos;
-                    //RightShoulder.Transform.Position += RightShoulderPos;
-
-                    if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-                    {
-                        Weapon.Transform.Position += mod;
-                        LeftShoulder.Transform.Position += mod;
-                        RightShoulder.Transform.Position += mod;
-                    }
+                    RotatePlayerPerAngleHorizontal(rotDir: RotationDirectionX.Left);
                 }
-                else if (Input.IsKeyDown(Stride.Input.Keys.Z))
+                else if (Input.IsKeyDown(Stride.Input.Keys.X))
                 {
-                    angleInRadians = -angled; // Assuming 'angled' is in radians
-                    Core.Transform.Rotation *= Quaternion.RotationY(angled);
+                    RotatePlayerPerAngleHorizontal(rotDir: RotationDirectionX.Right);
+                }
 
-                    // Apply the 2D rotation to the objects
-                    Matrix2x2 rotation2x2 = new Matrix2x2(
-                        (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
-                        (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
-                    );
-
-                    // Convert it to a 3x3 equivalent
-                    Matrix3x3 rotation3x3 = new Matrix3x3(
-                        rotation2x2.M11, 0f, rotation2x2.M12,
-                        0f, 1f, 0f,
-                        rotation2x2.M21, 0f, rotation2x2.M22
-                    );
-
-                    // Calculate the required translation matrices
-                    /*Matrix3x3 translateToOrigin = new Matrix3x3(
-                        1f, 0f, -rotationPointX,
-                        0f, 1f, -rotationPointY,
-                        0f, 0f, 1f
-                    );
-
-                    Matrix3x3 translateBack = new Matrix3x3(
-                        1f, 0f, rotationPointX,
-                        0f, 1f, rotationPointY,
-                        0f, 0f, 1f
-                    );*/
-
-                    // Combine the matrices to apply translation, rotation, and then translation back
-                    //Matrix3x3 finalTransformation = translateBack * rotation3x3 * translateToOrigin;
-
-                    //Vector3 positionOffset = new Vector3(0, 0, 0); // Adjust as needed
-
-                    /*Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, Weapon.Transform.Position);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, LeftShoulder.Transform.Position);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation2x2, RightShoulder.Transform.Position);*/
-
-                    //Iniciate translation
-                    CorePos = Core.Transform.Position;
-                    WeaponPos = Weapon.Transform.Position;
-                    LeftShoulderPos = LeftShoulder.Transform.Position;
-                    RightShoulderPos = RightShoulder.Transform.Position;
-
-                    Vector3 mod = Core.Transform.Position;
-                    if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-                    {
-                        Weapon.Transform.Position -= mod;
-                        LeftShoulder.Transform.Position -= mod;
-                        RightShoulder.Transform.Position -= mod;
-                    }
-
-                    Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, Weapon.Transform.Position);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, LeftShoulder.Transform.Position);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, RightShoulder.Transform.Position);
-
-                    /*Weapon.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, WeaponPos);
-                    LeftShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, LeftShoulderPos);
-                    RightShoulder.Transform.Position = RotationController.ChangePositionMatrixBased(rotation3x3, RightShoulderPos);*/
-
-                    //Core.Transform.Position += CorePos;
-                    //Weapon.Transform.Position += WeaponPos;
-                    //LeftShoulder.Transform.Position += LeftShoulderPos;
-                    //RightShoulder.Transform.Position += RightShoulderPos;
-
-                    if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-                    {
-                        Weapon.Transform.Position += mod;
-                        LeftShoulder.Transform.Position += mod;
-                        RightShoulder.Transform.Position += mod;
-                    }
+                if(Input.IsKeyDown(Stride.Input.Keys.C))
+                {
+                    RotatePlayerPerAngleVertical(rotDir: RotationDirectionY.Up);
+                }
+                else if (Input.IsKeyDown(Stride.Input.Keys.V))
+                {
+                    RotatePlayerPerAngleVertical(rotDir: RotationDirectionY.Down);
                 }
             }
+        }
+
+        public enum RotationDirectionY { Up = 0, Down = 1 }
+
+        //// Convert it to a 3x3 equivalent
+        
+        void RotatePlayerPerAngleVertical(float floatAngle = 0.4f, RotationDirectionY rotDir = RotationDirectionY.Up)
+        {
+            float angleInRadians = 0;
+            float angled = Suplementary.DegreesToRadians(floatAngle);
+
+            if (rotDir == RotationDirectionY.Up)
+            {
+                angleInRadians = -angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationX(angled);
+            }
+            else
+            {
+                angleInRadians = angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationX(-angled);
+            }
+
+
+            // Apply the 2D rotation to the objects
+            //Matrix2x2 rotation2x2 = new Matrix2x2(
+            //    (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
+            //    (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+            //);
+
+            // Convert it to a 3x3 equivalent
+            Matrix3x3 rotation3x3Vertical = new Matrix3x3(
+                1f, 0f, 0f,
+                0f, (float)Math.Cos(angleInRadians), (float)Math.Sin(angleInRadians),
+                0f, -(float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+            );
+
+            Vector3 mod = Core.Transform.Position;
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position -= mod;
+                //LeftShoulder.Transform.Position -= mod;
+                //RightShoulder.Transform.Position -= mod;
+            }
+
+            Weapon.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, Weapon.Transform.Position);
+            //LeftShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, LeftShoulder.Transform.Position);
+            //RightShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, RightShoulder.Transform.Position);
+
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position += mod;
+                //LeftShoulder.Transform.Position += mod;
+                //RightShoulder.Transform.Position += mod;
+            }
+        }
+
+        public enum RotationDirectionX { Left = 0, Right = 1 }
+        void RotatePlayerPerAngleHorizontal(float floatAngle = 0.4f, RotationDirectionX rotDir = RotationDirectionX.Left)
+        {
+            float angleInRadians = 0;
+            float angled = Suplementary.DegreesToRadians(floatAngle);
+
+            if (rotDir == RotationDirectionX.Left)
+            {
+                angleInRadians = -angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationY(angled);
+            }
+            else
+            {
+                angleInRadians = angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationY(-angled);
+            }
+
+
+            // Apply the 2D rotation to the objects
+            Matrix2x2 rotation2x2 = new Matrix2x2(
+                (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
+                (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+            );
+
+            // Convert it to a 3x3 equivalent
+            Matrix3x3 rotation3x3Horizontal = new Matrix3x3(
+                rotation2x2.M11, 0f, rotation2x2.M12,
+                0f, 1f, 0f,
+                rotation2x2.M21, 0f, rotation2x2.M22
+            );
+
+            Vector3 mod = Core.Transform.Position;
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position -= mod;
+                LeftShoulder.Transform.Position -= mod;
+                RightShoulder.Transform.Position -= mod;
+            }
+
+            Weapon.Transform.Position = ChangePositionMatrixBased(rotation3x3Horizontal, Weapon.Transform.Position);
+            LeftShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Horizontal, LeftShoulder.Transform.Position);
+            RightShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Horizontal, RightShoulder.Transform.Position);
+
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position += mod;
+                LeftShoulder.Transform.Position += mod;
+                RightShoulder.Transform.Position += mod;
+            }
+        }
+
+        public static float CalculateRotationAngleAround(Vector3 pointA, Vector3 pointB, Axis axis = Axis.X)
+        {
+            // Calculate the difference vector between point A and point B
+            Vector3 positionDifference = pointB - pointA;
+
+            float rotationAngle = 0;
+            if (axis == Axis.X)
+            {
+                // Calculate the rotation angle around the X-axis
+                rotationAngle = MathF.Atan2(positionDifference.Y, positionDifference.Z);
+            }
+            else if (axis == Axis.Y)
+            {
+                // Calculate the rotation angle around the Y-axis
+                rotationAngle = MathF.Atan2(positionDifference.X, positionDifference.Z);
+            }
+            else
+            {
+                // Calculate the rotation angle around the Z-axis
+                rotationAngle = MathF.Atan2(positionDifference.X, positionDifference.Y);
+            }
+
+            // Convert the angle to degrees if needed
+            rotationAngle = MathHelper.ToDegrees(rotationAngle);
+
+            return rotationAngle;
         }
 
         /// <summary>
