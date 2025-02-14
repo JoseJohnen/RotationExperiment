@@ -1,4 +1,5 @@
 ﻿using Stride.Core.Mathematics;
+using System;
 
 namespace RotationExperiment
 {
@@ -55,6 +56,20 @@ namespace RotationExperiment
             this.M31 = 0;
             this.M32 = 0;
             this.M33 = 1;
+        }
+
+        // Creates a rotation matrix around an arbitrary axis
+        public static Matrix3x3 CreateRotationMatrix(float angle, Vector3 axis)
+        {
+            float cosA = MathF.Cos(angle);
+            float sinA = MathF.Sin(angle);
+            float oneMinusCos = 1f - cosA;
+
+            return new Matrix3x3(
+                cosA + axis.X * axis.X * oneMinusCos, axis.X * axis.Y * oneMinusCos - axis.Z * sinA, axis.X * axis.Z * oneMinusCos + axis.Y * sinA,
+                axis.Y * axis.X * oneMinusCos + axis.Z * sinA, cosA + axis.Y * axis.Y * oneMinusCos, axis.Y * axis.Z * oneMinusCos - axis.X * sinA,
+                axis.Z * axis.X * oneMinusCos - axis.Y * sinA, axis.Z * axis.Y * oneMinusCos + axis.X * sinA, cosA + axis.Z * axis.Z * oneMinusCos
+            );
         }
 
         public static System.Numerics.Vector3 operator *(Matrix3x3 f, System.Numerics.Vector3 g)

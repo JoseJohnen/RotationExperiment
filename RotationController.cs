@@ -71,64 +71,75 @@ namespace RotationExperiment
                 {
                     RotatePlayerPerAngleVertical(rotDir: RotationDirectionY.Down);
                 }
+
+                if(Input.IsKeyDown (Stride.Input.Keys.B))
+                {
+                    RotatePlayerPerAngleDeep(rotDir: RotationDirectionZ.Left);
+                }
+                else if(Input.IsKeyDown(Stride.Input.Keys.N))
+                {
+                    RotatePlayerPerAngleDeep(rotDir: RotationDirectionZ.Right);
+                }
             }
         }
 
         public enum RotationDirectionY { Up = 0, Down = 1 }
-
-        //// Convert it to a 3x3 equivalent
-        
+        /// <summary>
+        /// It rotates the player vertically by the X axis, the weapon that is (up to down or down to up) [PITCH]
+        /// </summary>
+        /// <param name="floatAngle">(float) default is 0.4f, the angle of the rotation happening</param>
+        /// <param name="rotDir">(Enum) the direction of the rotation, being up or down</param>
         void RotatePlayerPerAngleVertical(float floatAngle = 0.4f, RotationDirectionY rotDir = RotationDirectionY.Up)
         {
-            float angleInRadians = 0;
-            float angled = Suplementary.DegreesToRadians(floatAngle);
+            float angleInRadians = Suplementary.DegreesToRadians(floatAngle);
+            if (rotDir == RotationDirectionY.Down) angleInRadians = -angleInRadians;
 
-            if (rotDir == RotationDirectionY.Up)
+            // Get the rotated right direction of the Core (taking previous horizontal rotation into account)
+            Vector3 rightDir = GetRightDirection(Core.Transform.Rotation);
+
+            // Compute rotation matrix for pitch (rotation around the right axis)
+            Matrix3x3 rotation3x3Vertical = Matrix3x3.CreateRotationMatrix(angleInRadians, rightDir);
+
+            // Rotate weapon relative to the core's orientation
+            Vector3 localWeaponPos = Weapon.Transform.Position - Core.Transform.Position;
+            localWeaponPos = ChangePositionMatrixBased(rotation3x3Vertical, localWeaponPos);
+            Weapon.Transform.Position = localWeaponPos + Core.Transform.Position;
+        }
+
+        public enum RotationDirectionZ { Left = 0, Right = 1 }
+        /// <summary>
+        /// It rotates the player by the Z axis (Deep) (left to right or right to left) [ROLL]
+        /// </summary>
+        /// <param name="floatAngle">(float) default is 0.4f, the angle of the rotation happening</param>
+        /// <param name="rotDir">(Enum) the direction of the rotation, being left or right</param>
+        void RotatePlayerPerAngleDeep(float floatAngle = 0.4f, RotationDirectionZ rotDir = RotationDirectionZ.Left)
+        {
+            float angleInRadians = Suplementary.DegreesToRadians(floatAngle);
+            if (rotDir == RotationDirectionZ.Right) angleInRadians = -angleInRadians;
+
+            // Get the rotated forward direction of the Core (taking previous horizontal rotation into account)
+            Vector3 forwardDir = GetForwardDirection(Core.Transform.Rotation);
+
+            // Compute rotation matrix for roll (rotation around the forward axis)
+            Matrix3x3 rotation3x3Roll = Matrix3x3.CreateRotationMatrix(angleInRadians, forwardDir);
+
+            Vector3 ApplyRoll(Vector3 shoulderPosition)
             {
-                angleInRadians = -angled; // Assuming 'angled' is in radians
-                Core.Transform.Rotation *= Quaternion.RotationX(angled);
-            }
-            else
-            {
-                angleInRadians = angled; // Assuming 'angled' is in radians
-                Core.Transform.Rotation *= Quaternion.RotationX(-angled);
+                Vector3 localPos = shoulderPosition - Core.Transform.Position;
+                localPos = ChangePositionMatrixBased(rotation3x3Roll, localPos);
+                return localPos + Core.Transform.Position;
             }
 
-
-            // Apply the 2D rotation to the objects
-            //Matrix2x2 rotation2x2 = new Matrix2x2(
-            //    (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
-            //    (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
-            //);
-
-            // Convert it to a 3x3 equivalent
-            Matrix3x3 rotation3x3Vertical = new Matrix3x3(
-                1f, 0f, 0f,
-                0f, (float)Math.Cos(angleInRadians), (float)Math.Sin(angleInRadians),
-                0f, -(float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
-            );
-
-            Vector3 mod = Core.Transform.Position;
-            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-            {
-                Weapon.Transform.Position -= mod;
-                //LeftShoulder.Transform.Position -= mod;
-                //RightShoulder.Transform.Position -= mod;
-            }
-
-            Weapon.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, Weapon.Transform.Position);
-            //LeftShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, LeftShoulder.Transform.Position);
-            //RightShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, RightShoulder.Transform.Position);
-
-            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
-            {
-                Weapon.Transform.Position += mod;
-                //LeftShoulder.Transform.Position += mod;
-                //RightShoulder.Transform.Position += mod;
-            }
+            LeftShoulder.Transform.Position = ApplyRoll(LeftShoulder.Transform.Position);
+            RightShoulder.Transform.Position = ApplyRoll(RightShoulder.Transform.Position);
         }
 
         public enum RotationDirectionX { Left = 0, Right = 1 }
+        /// <summary>
+        /// It rotates the player horizontally by the Y axis (left to right or right to left) [YAW]
+        /// </summary>
+        /// <param name="floatAngle">(float) default is 0.4f, the angle of the rotation happening</param>
+        /// <param name="rotDir">(Enum) the direction of the rotation, being left or right</param>
         void RotatePlayerPerAngleHorizontal(float floatAngle = 0.4f, RotationDirectionX rotDir = RotationDirectionX.Left)
         {
             float angleInRadians = 0;
@@ -179,6 +190,69 @@ namespace RotationExperiment
             }
         }
 
+        #region Rotate Weapon with No Core Area
+        void RotateWeaponPerAngleVerticalWithNoCore(float floatAngle = 0.4f, RotationDirectionY rotDir = RotationDirectionY.Up)
+        {
+            float angleInRadians = 0;
+            float angled = Suplementary.DegreesToRadians(floatAngle);
+
+            if (rotDir == RotationDirectionY.Up)
+            {
+                angleInRadians = -angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationX(angled);
+            }
+            else
+            {
+                angleInRadians = angled; // Assuming 'angled' is in radians
+                Core.Transform.Rotation *= Quaternion.RotationX(-angled);
+            }
+
+
+            // Apply the 2D rotation to the objects
+            //Matrix2x2 rotation2x2 = new Matrix2x2(
+            //    (float)Math.Cos(angleInRadians), -(float)Math.Sin(angleInRadians),
+            //    (float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+            //);
+
+            // Convert it to a 3x3 equivalent
+            Matrix3x3 rotation3x3Vertical = new Matrix3x3(
+                1f, 0f, 0f,
+                0f, (float)Math.Cos(angleInRadians), (float)Math.Sin(angleInRadians),
+                0f, -(float)Math.Sin(angleInRadians), (float)Math.Cos(angleInRadians)
+            );
+
+            Vector3 mod = Core.Transform.Position;
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position -= mod;
+                //LeftShoulder.Transform.Position -= mod;
+                //RightShoulder.Transform.Position -= mod;
+            }
+
+            Weapon.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, Weapon.Transform.Position);
+            //LeftShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, LeftShoulder.Transform.Position);
+            //RightShoulder.Transform.Position = ChangePositionMatrixBased(rotation3x3Vertical, RightShoulder.Transform.Position);
+
+            if (Core.Transform.Position != new Vector3(0f, 0.5f, 0f))
+            {
+                Weapon.Transform.Position += mod;
+                //LeftShoulder.Transform.Position += mod;
+                //RightShoulder.Transform.Position += mod;
+            }
+        }
+        #endregion
+
+        Vector3 GetRightDirection(Quaternion rotation)
+        {
+            return rotation * Vector3.UnitX; // Rotated right direction
+        }
+
+        Vector3 GetForwardDirection(Quaternion rotation)
+        {
+            return rotation * Vector3.UnitZ; // Rotated forward direction
+        }
+
+        //// Convert it to a 3x3 equivalent
         public static float CalculateRotationAngleAround(Vector3 pointA, Vector3 pointB, Axis axis = Axis.X)
         {
             // Calculate the difference vector between point A and point B
